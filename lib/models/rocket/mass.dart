@@ -1,0 +1,26 @@
+class Mass {
+  num _kg;
+  num _lb;
+
+  Mass({num kg, num lb}) {
+    this._kg = kg;
+    this._lb = lb;
+  }
+
+  num get kg => _kg;
+  set kg(num kg) => _kg = kg;
+  num get lb => _lb;
+  set lb(num lb) => _lb = lb;
+
+  Mass.fromJson(Map<String, dynamic> json) {
+    _kg = json['kg'];
+    _lb = json['lb'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['kg'] = this._kg;
+    data['lb'] = this._lb;
+    return data;
+  }
+}
