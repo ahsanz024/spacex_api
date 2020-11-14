@@ -19,8 +19,13 @@ class SpaceXApi {
 
   Future<dynamic> queryCapsules({
     Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.capsules, query: query);
+    return _req.getData(
+      endpoint: Endpoints.capsules,
+      query: query,
+      header: headers,
+    );
   }
 
   // Company
@@ -36,13 +41,18 @@ class SpaceXApi {
   Future<dynamic> getCrewById({
     String id,
   }) {
-    return _req.getData(endpoint: Endpoints.capsules, id: id);
+    return _req.getData(endpoint: Endpoints.crew, id: id);
   }
 
   Future<dynamic> queryCrews({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.capsules, query: query);
+    return _req.getData(
+      endpoint: Endpoints.crew,
+      query: query,
+      header: headers,
+    );
   }
 
   // Dragons
@@ -57,9 +67,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryDragons({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.dragons, query: query);
+    return _req.getData(
+      endpoint: Endpoints.dragons,
+      query: query,
+      header: headers,
+    );
   }
 
   // History
@@ -74,9 +89,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryHistory({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.history, query: query);
+    return _req.getData(
+      endpoint: Endpoints.history,
+      query: query,
+      header: headers,
+    );
   }
 
   // Landpads
@@ -91,9 +111,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryLandpads({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.landpads, query: query);
+    return _req.getData(
+      endpoint: Endpoints.landpads,
+      query: query,
+      header: headers,
+    );
   }
 
   // Launches
@@ -108,9 +133,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryLaunches({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.launches, query: query);
+    return _req.getData(
+      endpoint: Endpoints.launches,
+      query: query,
+      header: headers,
+    );
   }
 
   // Payloads
@@ -125,9 +155,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryPayloads({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.payloads, query: query);
+    return _req.getData(
+      endpoint: Endpoints.payloads,
+      query: query,
+      header: headers,
+    );
   }
 
   // Rockets
@@ -142,9 +177,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryRockets({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.rockets, query: query);
+    return _req.getData(
+      endpoint: Endpoints.rockets,
+      query: query,
+      header: headers,
+    );
   }
 
   // Roadser
@@ -164,9 +204,14 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryShips({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.ships, query: query);
+    return _req.getData(
+      endpoint: Endpoints.ships,
+      query: query,
+      header: headers,
+    );
   }
 
   // Starlinks
@@ -181,8 +226,13 @@ class SpaceXApi {
   }
 
   Future<dynamic> queryStarlinks({
-    Object query = null,
+    Object query,
+    Object headers = null,
   }) {
-    return _req.getData(endpoint: Endpoints.starlink, query: query);
+    return _req.getData(
+      endpoint: Endpoints.starlink,
+      query: query,
+      header: headers,
+    );
   }
 }
