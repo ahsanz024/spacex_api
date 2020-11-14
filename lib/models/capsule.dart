@@ -54,7 +54,7 @@ class Capsule {
     _waterLandings = json['water_landings'];
     _landLandings = json['land_landings'];
     _lastUpdate = json['last_update'];
-    _launches = json['launches'].cast<String>();
+    _launches = json['launches']?.cast<String>();
     _serial = json['serial'];
     _status = json['status'];
     _type = json['type'];

@@ -128,7 +128,7 @@ class Ship {
     _legacyId = json['legacy_id'];
     _model = json['model'];
     _type = json['type'];
-    _roles = json['roles'].cast<String>();
+    _roles = json['roles']?.cast<String>();
     _imo = json['imo'];
     _mmsi = json['mmsi'];
     _abs = json['abs'];
@@ -145,7 +145,7 @@ class Ship {
     _lastAisUpdate = json['last_ais_update'];
     _link = json['link'];
     _image = json['image'];
-    _launches = json['launches'].cast<String>();
+    _launches = json['launches']?.cast<String>();
     _name = json['name'];
     _active = json['active'];
     _id = json['id'];

@@ -143,7 +143,7 @@ class Roadster {
   set id(String id) => _id = id;
 
   Roadster.fromJson(Map<String, dynamic> json) {
-    _flickrImages = json['flickr_images'].cast<String>();
+    _flickrImages = json['flickr_images']?.cast<String>();
     _name = json['name'];
     _launchDateUtc = json['launch_date_utc'];
     _launchDateUnix = json['launch_date_unix'];

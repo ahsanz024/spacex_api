@@ -44,7 +44,7 @@ class Crew {
     _agency = json['agency'];
     _image = json['image'];
     _wikipedia = json['wikipedia'];
-    _launches = json['launches'].cast<String>();
+    _launches = json['launches']?.cast<String>();
     _status = json['status'];
     _id = json['id'];
   }

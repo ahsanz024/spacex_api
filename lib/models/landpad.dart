@@ -89,7 +89,7 @@ class Landpad {
     _landingSuccesses = json['landing_successes'];
     _wikipedia = json['wikipedia'];
     _details = json['details'];
-    _launches = json['launches'].cast<String>();
+    _launches = json['launches']?.cast<String>();
     _status = json['status'];
     _id = json['id'];
   }

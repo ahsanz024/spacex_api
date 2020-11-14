@@ -147,7 +147,7 @@ class Rocket {
         _payloadWeights.add(new PayloadWeights.fromJson(v));
       });
     }
-    _flickrImages = json['flickr_images'].cast<String>();
+    _flickrImages = json['flickr_images']?.cast<String>();
     _name = json['name'];
     _type = json['type'];
     _active = json['active'];

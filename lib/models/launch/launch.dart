@@ -178,7 +178,7 @@ class Launch {
         _capsules.add(v);
       });
     }
-    _payloads = json['payloads'].cast<String>();
+    _payloads = json['payloads']?.cast<String>();
     _launchpad = json['launchpad'];
     _autoUpdate = json['auto_update'];
     if (json['failures'] != null) {
