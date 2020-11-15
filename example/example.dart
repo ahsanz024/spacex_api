@@ -7,7 +7,9 @@ import 'package:spacex_api/models/dragon/dragon.dart';
 import 'package:spacex_api/models/history/history.dart';
 import 'package:spacex_api/models/landpad.dart';
 import 'package:spacex_api/models/launch/launch.dart';
+import 'package:spacex_api/models/pagenated_response.dart';
 import 'package:spacex_api/models/payload.dart';
+import 'package:spacex_api/models/query/options.dart';
 import 'package:spacex_api/models/roadster.dart';
 import 'package:spacex_api/models/rocket/rocket.dart';
 import 'package:spacex_api/models/ship.dart';
@@ -16,18 +18,19 @@ import 'package:spacex_api/spacex_api.dart';
 
 void main() async {
   final api = SpaceXApi();
-  _fetchSingleCapsule(api);
-  _fetchCompany(api);
-  _fetchCrew(api);
-  _fetchDragons(api);
-  _fetchHistory(api);
-  _fetchLandpads(api);
-  _fetchLaunches(api);
-  _fetchPayloads(api);
-  _fetchRoadster(api);
-  _fetchRocket(api);
-  _fetchShips(api);
-  _fetchStarlink(api);
+  // _fetchSingleCapsule(api);
+  // _fetchCompany(api);
+  // _fetchCrew(api);
+  // _fetchDragons(api);
+  // _fetchHistory(api);
+  // _fetchLandpads(api);
+  // _fetchLaunches(api);
+  // _fetchPayloads(api);
+  // _fetchRoadster(api);
+  // _fetchRocket(api);
+  // _fetchShips(api);
+  // _fetchStarlink(api);
+  // _queryStarlinks(api);
 }
 
 _parseResponse(Response response) {
@@ -131,6 +134,28 @@ Future<void> _fetchDragons(SpaceXApi api) async {
     List<Dragon> data =
         json.map((e) => Dragon.fromJson(e)).cast<Dragon>().toList();
     print("Fetch Dragon ${data[0].name}");
+  }
+}
+
+Future<void> _queryStarlinks(SpaceXApi api) async {
+  final query = Options();
+  query.limit = 25;
+  query.page = 1;
+  query.pagination = true;
+  query.select = [
+    "version",
+    "height_km",
+    "longitude",
+  ];
+  var body = convert.jsonEncode(query.toJson());
+  final response = await api.queryStarlinks(query: body);
+  final json = _parseResponse(response);
+  if (json != null) {
+    PagenatedResponse resp = PagenatedResponse.fromJson(json);
+
+    List<Starlink> data =
+        resp.docs.map((e) => Starlink.fromJson(e)).cast<Starlink>().toList();
+    print("Fetch Crew ${json}");
   }
 }
 
