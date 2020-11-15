@@ -31,7 +31,7 @@ class SpaceXApi {
   }
 
   // Company
-  Future<Response> company() {
+  Future<Response> getCompany() {
     return _req.getData(endpoint: Endpoints.company);
   }
 
