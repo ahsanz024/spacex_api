@@ -1,6 +1,7 @@
 name: spacex_api
 description: Dart package for using SpaceX API (v4)
 version: 0.0.1
+homepage: 'https://github.com/ahsanz024/spacex_api'
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
