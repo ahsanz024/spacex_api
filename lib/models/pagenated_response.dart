@@ -8,7 +8,7 @@ class PagenatedResponse {
   int pagingCounter;
   bool hasPrevPage;
   bool hasNextPage;
-  Null prevPage;
+  int prevPage;
   int nextPage;
 
   PagenatedResponse({
