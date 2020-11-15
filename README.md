@@ -1,5 +1,7 @@
 # Dart SpaceX API Client (v4)
 
+![Build](https://github.com/ahsanz024/spacex_api/blob/master/.github/workflows/dart.yml/badge.svg)
+
 Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX-API)** (with support for all endpoints and query subsystem in Dart), providing information about everything related to SpaceX and its public data.
 
 - **Capsules** - detailed information about Dragon capsules.
