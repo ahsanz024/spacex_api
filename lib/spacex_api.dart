@@ -1,5 +1,7 @@
 library spacex_api;
 
+import 'package:http/http.dart';
+
 import 'src/endpoints.dart';
 import 'src/requestor.dart';
 
@@ -7,17 +9,17 @@ class SpaceXApi {
   final _req = Requestor();
 
   // Capsules
-  Future<dynamic> getAllCapsules() {
+  Future<Response> getAllCapsules() {
     return _req.getData(endpoint: Endpoints.capsules);
   }
 
-  Future<dynamic> getCapsuleById({
+  Future<Response> getCapsuleById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.capsules, id: id);
   }
 
-  Future<dynamic> queryCapsules({
+  Future<Response> queryCapsules({
     Object query,
     Object headers = null,
   }) {
@@ -29,22 +31,22 @@ class SpaceXApi {
   }
 
   // Company
-  Future<dynamic> company() {
+  Future<Response> company() {
     return _req.getData(endpoint: Endpoints.company);
   }
 
   // Crews
-  Future<dynamic> getAllCrews() {
+  Future<Response> getAllCrews() {
     return _req.getData(endpoint: Endpoints.crew);
   }
 
-  Future<dynamic> getCrewById({
+  Future<Response> getCrewById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.crew, id: id);
   }
 
-  Future<dynamic> queryCrews({
+  Future<Response> queryCrews({
     Object query,
     Object headers = null,
   }) {
@@ -56,17 +58,17 @@ class SpaceXApi {
   }
 
   // Dragons
-  Future<dynamic> getAllDragons() {
+  Future<Response> getAllDragons() {
     return _req.getData(endpoint: Endpoints.dragons);
   }
 
-  Future<dynamic> getDragonById({
+  Future<Response> getDragonById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.dragons, id: id);
   }
 
-  Future<dynamic> queryDragons({
+  Future<Response> queryDragons({
     Object query,
     Object headers = null,
   }) {
@@ -78,17 +80,17 @@ class SpaceXApi {
   }
 
   // History
-  Future<dynamic> getAllHistory() {
+  Future<Response> getAllHistory() {
     return _req.getData(endpoint: Endpoints.history);
   }
 
-  Future<dynamic> getHistoryById({
+  Future<Response> getHistoryById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.history, id: id);
   }
 
-  Future<dynamic> queryHistory({
+  Future<Response> queryHistory({
     Object query,
     Object headers = null,
   }) {
@@ -100,17 +102,17 @@ class SpaceXApi {
   }
 
   // Landpads
-  Future<dynamic> getAllLandpads() {
+  Future<Response> getAllLandpads() {
     return _req.getData(endpoint: Endpoints.landpads);
   }
 
-  Future<dynamic> getLandpadById({
+  Future<Response> getLandpadById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.landpads, id: id);
   }
 
-  Future<dynamic> queryLandpads({
+  Future<Response> queryLandpads({
     Object query,
     Object headers = null,
   }) {
@@ -122,17 +124,17 @@ class SpaceXApi {
   }
 
   // Launches
-  Future<dynamic> getAllLaunches() {
+  Future<Response> getAllLaunches() {
     return _req.getData(endpoint: Endpoints.launches);
   }
 
-  Future<dynamic> getLaunchById({
+  Future<Response> getLaunchById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.launches, id: id);
   }
 
-  Future<dynamic> queryLaunches({
+  Future<Response> queryLaunches({
     Object query,
     Object headers = null,
   }) {
@@ -144,17 +146,17 @@ class SpaceXApi {
   }
 
   // Payloads
-  Future<dynamic> getAllPayloads() {
+  Future<Response> getAllPayloads() {
     return _req.getData(endpoint: Endpoints.payloads);
   }
 
-  Future<dynamic> getPayloadsById({
+  Future<Response> getPayloadsById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.payloads, id: id);
   }
 
-  Future<dynamic> queryPayloads({
+  Future<Response> queryPayloads({
     Object query,
     Object headers = null,
   }) {
@@ -166,17 +168,17 @@ class SpaceXApi {
   }
 
   // Rockets
-  Future<dynamic> getAllRockets() {
+  Future<Response> getAllRockets() {
     return _req.getData(endpoint: Endpoints.rockets);
   }
 
-  Future<dynamic> getRocketById({
+  Future<Response> getRocketById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.rockets, id: id);
   }
 
-  Future<dynamic> queryRockets({
+  Future<Response> queryRockets({
     Object query,
     Object headers = null,
   }) {
@@ -188,22 +190,22 @@ class SpaceXApi {
   }
 
   // Roadser
-  Future<dynamic> getRoadster() {
+  Future<Response> getRoadster() {
     return _req.getData(endpoint: Endpoints.roadster);
   }
 
   // Ships
-  Future<dynamic> getAllShips() {
+  Future<Response> getAllShips() {
     return _req.getData(endpoint: Endpoints.ships);
   }
 
-  Future<dynamic> getShipsById({
+  Future<Response> getShipsById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.ships, id: id);
   }
 
-  Future<dynamic> queryShips({
+  Future<Response> queryShips({
     Object query,
     Object headers = null,
   }) {
@@ -215,17 +217,17 @@ class SpaceXApi {
   }
 
   // Starlinks
-  Future<dynamic> getAllStarlinks() {
+  Future<Response> getAllStarlinks() {
     return _req.getData(endpoint: Endpoints.starlink);
   }
 
-  Future<dynamic> getStarlinkById({
+  Future<Response> getStarlinkById({
     String id,
   }) {
     return _req.getData(endpoint: Endpoints.starlink, id: id);
   }
 
-  Future<dynamic> queryStarlinks({
+  Future<Response> queryStarlinks({
     Object query,
     Object headers = null,
   }) {

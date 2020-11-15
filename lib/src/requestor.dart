@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 class Requestor {
   static const _baseUrl = "https://api.spacexdata.com/v4/";
 
-  Future<dynamic> getData({
+  Future<http.Response> getData({
     String endpoint,
     String id = null,
     Object query = null,
@@ -17,17 +17,21 @@ class Requestor {
     return getMethod(endpoint);
   }
 
-  getMethod(String endpoint) async {
+  Future<http.Response> getMethod(String endpoint) async {
     final url = "$_baseUrl$endpoint";
     return await http.get(url);
   }
 
-  getById(String endpoint, String id) async {
+  Future<http.Response> getById(String endpoint, String id) async {
     final url = "$_baseUrl$endpoint/$id";
     return await http.get(url);
   }
 
-  postMethod(String endpoint, Object query, Object header) async {
+  Future<http.Response> postMethod(
+    String endpoint,
+    Object query,
+    Object header,
+  ) async {
     final url = "$_baseUrl$endpoint/query";
 
     if (header == null) {
