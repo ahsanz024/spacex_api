@@ -62,7 +62,7 @@ class Capsule {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['reuse_count'] = this._reuseCount;
     data['water_landings'] = this._waterLandings;
     data['land_landings'] = this._landLandings;

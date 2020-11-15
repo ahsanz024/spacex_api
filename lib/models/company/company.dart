@@ -89,7 +89,7 @@ class Company {
 
   Company.fromJson(Map<String, dynamic> json) {
     _headquarters = json['headquarters'] != null
-        ? new Headquarters.fromJson(json['headquarters'])
+        ? Headquarters.fromJson(json['headquarters'])
         : null;
     _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
     _name = json['name'];
