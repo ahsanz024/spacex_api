@@ -1,4 +1,8 @@
-class QueryOptions {
+/**
+ * Accepts any of the options documented here, but here are some of the most common:
+ * https://github.com/aravindnc/mongoose-paginate-v2#modelpaginatequery-options-callback
+ */
+class Options {
   var select;
   var sort;
   num offset;
