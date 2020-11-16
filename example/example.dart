@@ -15,24 +15,73 @@ import 'package:spacex_api/models/rocket/rocket.dart';
 import 'package:spacex_api/models/ship.dart';
 import 'package:spacex_api/models/starlink/starlink.dart';
 import 'package:spacex_api/spacex_api.dart';
+import 'package:spacex_api/utils.dart';
 
 void main() async {
   final api = SpaceXApi();
-  // _fetchSingleCapsule(api);
-  // _fetchCompany(api);
-  // _fetchCrew(api);
-  // _fetchDragons(api);
-  // _fetchHistory(api);
-  // _fetchLandpads(api);
-  // _fetchLaunches(api);
-  // _fetchPayloads(api);
-  // _fetchRoadster(api);
-  // _fetchRocket(api);
-  // _fetchShips(api);
-  // _fetchStarlink(api);
-  // _queryStarlinks(api);
+  // Fetch by ID
+  _fetchSingleCapsule(api);
+
+  // Get all objects
+  _fetchAllStarlink(api);
+
+  // Query objects
+  _queryStarlinks(api);
 }
 
+Future<void> _fetchSingleCapsule(SpaceXApi api) async {
+  final response = await api.getCapsuleById(id: "5e9e2c5cf359183bb73b266e");
+  if (response.statusCode == 200) {
+    final json = Utils.parseResponse(response);
+    final capsule = Capsule.fromJson(json);
+    print("Fetch Single Capsule serial -> ${capsule.serial}");
+  }
+}
+
+Future<void> _fetchAllStarlink(SpaceXApi api) async {
+  final response = await api.getAllStarlinks();
+  if (response.statusCode == 200) {
+    List<Starlink> data =
+        Utils.getAsList<Starlink>(response, (e) => Starlink.fromJson(e));
+    print("Fetch Starlinks ${data.length}");
+  }
+}
+
+Future<void> _queryStarlinks(SpaceXApi api) async {
+  final query = Options();
+  query.limit = 25;
+  query.page = 1;
+  query.pagination = true;
+  query.select = [
+    "version",
+    "height_km",
+    "longitude",
+  ];
+  var queryJson = convert.jsonEncode(query.toJson());
+
+  final response = await api.queryStarlinks(query: queryJson);
+  if (response.statusCode == 200) {
+    final jsonResp = Utils.parseResponse(response);
+    PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);
+    List<Starlink> data = pagenatedResponse.docs
+        .map((e) => Starlink.fromJson(e))
+        .cast<Starlink>()
+        .toList();
+    print("Qeury Starlinks ${data.length}");
+  }
+
+  // Alternative solution
+  // final json = _parseResponse(response);
+  // if (json != null) {
+  //   PagenatedResponse resp = PagenatedResponse.fromJson(json);
+
+  //   List<Starlink> data =
+  //       resp.docs.map((e) => Starlink.fromJson(e)).cast<Starlink>().toList();
+  //   print("Qeury Starlinks ${data.length}");
+  // }
+}
+
+// More examples
 _parseResponse(Response response) {
   if (response.statusCode == 200) {
     final jsonResponse = convert.jsonDecode(response.body);
@@ -45,18 +94,6 @@ _parseResponse(Response response) {
 fromJsonList<T>(List json, Function func) {
   List caps = json.map((e) => func(e)).cast<T>().toList();
   return caps;
-}
-
-Future<void> _fetchStarlink(SpaceXApi api) async {
-  final response = await api.getAllStarlinks();
-  final json = _parseResponse(response);
-  if (json != null) {
-    List<Starlink> data =
-        fromJsonList<Starlink>(json, (e) => Starlink.fromJson(e));
-    // List<Starlink> data =
-    //     json.map((e) => Starlink.fromJson(e)).cast<Starlink>().toList();
-    print("Fetch Starlink ${data[0].id}");
-  }
 }
 
 Future<void> _fetchShips(SpaceXApi api) async {
@@ -137,28 +174,6 @@ Future<void> _fetchDragons(SpaceXApi api) async {
   }
 }
 
-Future<void> _queryStarlinks(SpaceXApi api) async {
-  final query = Options();
-  query.limit = 25;
-  query.page = 1;
-  query.pagination = true;
-  query.select = [
-    "version",
-    "height_km",
-    "longitude",
-  ];
-  var body = convert.jsonEncode(query.toJson());
-  final response = await api.queryStarlinks(query: body);
-  final json = _parseResponse(response);
-  if (json != null) {
-    PagenatedResponse resp = PagenatedResponse.fromJson(json);
-
-    List<Starlink> data =
-        resp.docs.map((e) => Starlink.fromJson(e)).cast<Starlink>().toList();
-    print("Fetch Crew ${json}");
-  }
-}
-
 Future<void> _fetchCrew(SpaceXApi api) async {
   final response = await api.getAllCrews();
   final json = _parseResponse(response);
@@ -174,14 +189,5 @@ Future<void> _fetchCompany(SpaceXApi api) async {
   if (json != null) {
     Company data = Company.fromJson(json);
     print("Fetch Company ${data.name}");
-  }
-}
-
-Future<void> _fetchSingleCapsule(SpaceXApi api) async {
-  final response = await api.getCapsuleById(id: "5e9e2c5cf359183bb73b266e");
-  final json = _parseResponse(response);
-  if (json != null) {
-    Capsule capsule = Capsule.fromJson(json);
-    print("Fetch Single Capsule serial -> ${capsule.serial}");
   }
 }
