@@ -32,7 +32,7 @@ void main() async {
 Future<void> _fetchSingleCapsule(SpaceXApi api) async {
   final response = await api.getCapsuleById(id: "5e9e2c5cf359183bb73b266e");
   if (response.statusCode == 200) {
-    final json = Utils.parseResponse(response);
+    final json = Utils.parseResponseAsJson(response);
     final capsule = Capsule.fromJson(json);
     print("Fetch Single Capsule serial -> ${capsule.serial}");
   }
@@ -41,8 +41,8 @@ Future<void> _fetchSingleCapsule(SpaceXApi api) async {
 Future<void> _fetchAllStarlink(SpaceXApi api) async {
   final response = await api.getAllStarlinks();
   if (response.statusCode == 200) {
-    List<Starlink> data =
-        Utils.getAsList<Starlink>(response, (e) => Starlink.fromJson(e));
+    List<Starlink> data = Utils.convertResponseToList<Starlink>(
+        response, (e) => Starlink.fromJson(e));
     print("Fetch Starlinks ${data.length}");
   }
 }
@@ -61,7 +61,7 @@ Future<void> _queryStarlinks(SpaceXApi api) async {
 
   final response = await api.queryStarlinks(query: queryJson);
   if (response.statusCode == 200) {
-    final jsonResp = Utils.parseResponse(response);
+    final jsonResp = Utils.parseResponseAsJson(response);
     PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);
     List<Starlink> data = pagenatedResponse.docs
         .map((e) => Starlink.fromJson(e))
