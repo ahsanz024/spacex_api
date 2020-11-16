@@ -19,6 +19,41 @@ Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX
 - **Ships** - detailed information about ships in the SpaceX fleet.
 - **Starlink** - detailed information about Starlink satellites and orbits.
 
-# Examples
+## Examples
+
+    // Fetch all items
+    Future<void> getAllStarlink(SpaceXApi api) async {
+        final response = await api.getAllStarlinks();
+        if (response.statusCode == 200) {
+            List<Starlink> data =
+                Utils.getAsList<Starlink>(response, (e) => Starlink.fromJson(e));
+            print("Fetch Starlinks ${data.length}");
+        }
+    }
+
+    // Query items
+    Future<void> queryStarlinks(SpaceXApi api) async {
+        final query = Options();
+        query.limit = 25;
+        query.page = 1;
+        query.pagination = true;
+        query.select = [
+            "version",
+            "height_km",
+            "longitude",
+        ];
+        var queryJson = convert.jsonEncode(query.toJson());
+
+        final response = await api.queryStarlinks(query: queryJson);
+        if (response.statusCode == 200) {
+            final jsonResp = Utils.parseResponse(response);
+            PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);
+            List<Starlink> data = pagenatedResponse.docs
+                .map((e) => Starlink.fromJson(e))
+                .cast<Starlink>()
+                .toList();
+            print("Qeury Starlinks ${data.length}");
+        }
+    }
 
 Basic usage examples can be found in the **[Examples](/examples/example.dart)**.
