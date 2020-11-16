@@ -1,6 +1,7 @@
 # Dart SpaceX API Client (v4)
 
-![![pub package](https://img.shields.io/pub/v/spacex_api.svg)](https://pub.dev/packages/spacex_api)
+[![pub package](https://img.shields.io/pub/v/spacex_api.svg)](https://pub.dev/packages/spacex_api)
+
 ![Build](https://github.com/ahsanz024/spacex_api/workflows/Build/badge.svg)
 
 Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX-API)** (with support for all endpoints and query subsystem in Dart), providing information about everything related to SpaceX and its public data.
