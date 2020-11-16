@@ -26,7 +26,7 @@ Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX
         final response = await api.getAllStarlinks();
         if (response.statusCode == 200) {
             List<Starlink> data =
-                Utils.getAsList<Starlink>(response, (e) => Starlink.fromJson(e));
+                Utils.convertResponseToList<Starlink>(response, (e) => Starlink.fromJson(e));
             print("Fetch Starlinks ${data.length}");
         }
     }
@@ -46,7 +46,7 @@ Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX
 
         final response = await api.queryStarlinks(query: queryJson);
         if (response.statusCode == 200) {
-            final jsonResp = Utils.parseResponse(response);
+            final jsonResp = Utils.parseResponseAsJson(response);
             PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);
             List<Starlink> data = pagenatedResponse.docs
                 .map((e) => Starlink.fromJson(e))
