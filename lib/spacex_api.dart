@@ -145,6 +145,28 @@ class SpaceXApi {
     );
   }
 
+  // Launchpads
+  Future<Response> getAllLaunchPads() {
+    return _req.getData(endpoint: Endpoints.launchpads);
+  }
+
+  Future<Response> getLaunchPadById({
+    String id,
+  }) {
+    return _req.getData(endpoint: Endpoints.launchpads, id: id);
+  }
+
+  Future<Response> queryLaunchPad({
+    Object query,
+    Object headers = null,
+  }) {
+    return _req.getData(
+      endpoint: Endpoints.launchpads,
+      query: query,
+      header: headers,
+    );
+  }
+
   // Payloads
   Future<Response> getAllPayloads() {
     return _req.getData(endpoint: Endpoints.payloads);
