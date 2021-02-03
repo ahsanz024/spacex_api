@@ -1,3 +1,8 @@
+## [0.0.5] - Added Dartdoc support
+
+- Updated documentation
+- Bumped version to 0.0.5
+
 ## [0.0.4] - Added LaunchPads
 
 - Added Launchpads under lib/models.
@@ -6,7 +11,7 @@
 - Implemented getLaunchPadById in SpaceXApi.
 - Implemented queryLaunchPad in SpaceXApi.
 - Bumped version to 0.0.4
-- Fixed Readme.md to correctly point to examples. 
+- Fixed Readme.md to correctly point to examples.
 
 ## [0.0.3] - Updated Utils
 
