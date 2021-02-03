@@ -91,7 +91,7 @@ class Company {
     _headquarters = json['headquarters'] != null
         ? Headquarters.fromJson(json['headquarters'])
         : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _links = json['links'] != null ? Links.fromJson(json['links']) : null;
     _name = json['name'];
     _founder = json['founder'];
     _founded = json['founded'];

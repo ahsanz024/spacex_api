@@ -145,7 +145,7 @@ class Launch {
     _fairings = json['fairings'] != null
         ? new Fairings.fromJson(json['fairings'])
         : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _links = json['links'] != null ? Links.fromJson(json['links']) : null;
     _staticFireDateUtc = json['static_fire_date_utc'];
     _staticFireDateUnix = json['static_fire_date_unix'];
     _tbd = json['tbd'];

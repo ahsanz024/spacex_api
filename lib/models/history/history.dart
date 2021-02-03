@@ -37,7 +37,7 @@ class History {
   set id(String id) => _id = id;
 
   History.fromJson(Map<String, dynamic> json) {
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _links = json['links'] != null ? Links.fromJson(json['links']) : null;
     _title = json['title'];
     _eventDateUtc = json['event_date_utc'];
     _eventDateUnix = json['event_date_unix'];
