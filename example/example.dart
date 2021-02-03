@@ -7,6 +7,7 @@ import 'package:spacex_api/models/dragon/dragon.dart';
 import 'package:spacex_api/models/history/history.dart';
 import 'package:spacex_api/models/landpad.dart';
 import 'package:spacex_api/models/launch/launch.dart';
+import 'package:spacex_api/models/launchpad.dart';
 import 'package:spacex_api/models/pagenated_response.dart';
 import 'package:spacex_api/models/payload.dart';
 import 'package:spacex_api/models/query/options.dart';
@@ -140,6 +141,16 @@ Future<void> _fetchLaunches(SpaceXApi api) async {
   if (json != null) {
     List<Launch> data =
         json.map((e) => Launch.fromJson(e)).cast<Launch>().toList();
+    print("Fetch Launch ${data[0].details}");
+  }
+}
+
+Future<void> _fetchLaunchPads(SpaceXApi api) async {
+  final response = await api.getAllLaunchPads();
+  final json = _parseResponse(response);
+  if (json != null) {
+    List<Launchpad> data =
+        json.map((e) => Launchpad.fromJson(e)).cast<Launchpad>().toList();
     print("Fetch Launch ${data[0].details}");
   }
 }

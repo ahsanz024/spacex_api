@@ -57,4 +57,4 @@ Dart wrapper for **[unofficial SpaceX API v4](https://github.com/r-spacex/SpaceX
         }
     }
 
-More examples can be found in the **[Examples](/examples/example.dart)**.
+More examples can be found in the **[Examples](/example/example.dart)**.
