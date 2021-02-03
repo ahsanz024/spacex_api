@@ -8,7 +8,7 @@ import 'src/requestor.dart';
 class SpaceXApi {
   final _req = Requestor();
 
-  // Capsules
+  /// Capsules
   Future<Response> getAllCapsules() {
     return _req.getData(endpoint: Endpoints.capsules);
   }
@@ -30,12 +30,12 @@ class SpaceXApi {
     );
   }
 
-  // Company
+  /// Company
   Future<Response> getCompany() {
     return _req.getData(endpoint: Endpoints.company);
   }
 
-  // Crews
+  /// Crews
   Future<Response> getAllCrews() {
     return _req.getData(endpoint: Endpoints.crew);
   }
@@ -57,7 +57,7 @@ class SpaceXApi {
     );
   }
 
-  // Dragons
+  /// Dragons
   Future<Response> getAllDragons() {
     return _req.getData(endpoint: Endpoints.dragons);
   }
@@ -79,7 +79,7 @@ class SpaceXApi {
     );
   }
 
-  // History
+  /// History
   Future<Response> getAllHistory() {
     return _req.getData(endpoint: Endpoints.history);
   }
@@ -101,7 +101,7 @@ class SpaceXApi {
     );
   }
 
-  // Landpads
+  /// Landpads
   Future<Response> getAllLandpads() {
     return _req.getData(endpoint: Endpoints.landpads);
   }
@@ -123,7 +123,7 @@ class SpaceXApi {
     );
   }
 
-  // Launches
+  /// Launches
   Future<Response> getAllLaunches() {
     return _req.getData(endpoint: Endpoints.launches);
   }
@@ -145,7 +145,7 @@ class SpaceXApi {
     );
   }
 
-  // Launchpads
+  /// Launchpads
   Future<Response> getAllLaunchPads() {
     return _req.getData(endpoint: Endpoints.launchpads);
   }
@@ -167,7 +167,7 @@ class SpaceXApi {
     );
   }
 
-  // Payloads
+  /// Payloads
   Future<Response> getAllPayloads() {
     return _req.getData(endpoint: Endpoints.payloads);
   }
@@ -189,7 +189,7 @@ class SpaceXApi {
     );
   }
 
-  // Rockets
+  /// Rockets
   Future<Response> getAllRockets() {
     return _req.getData(endpoint: Endpoints.rockets);
   }
@@ -211,12 +211,12 @@ class SpaceXApi {
     );
   }
 
-  // Roadser
+  /// Roadser
   Future<Response> getRoadster() {
     return _req.getData(endpoint: Endpoints.roadster);
   }
 
-  // Ships
+  /// Ships
   Future<Response> getAllShips() {
     return _req.getData(endpoint: Endpoints.ships);
   }
@@ -238,7 +238,7 @@ class SpaceXApi {
     );
   }
 
-  // Starlinks
+  /// Starlinks
   Future<Response> getAllStarlinks() {
     return _req.getData(endpoint: Endpoints.starlink);
   }
