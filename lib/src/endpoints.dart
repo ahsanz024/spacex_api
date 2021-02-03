@@ -1,6 +1,5 @@
-/**
- * List of all endpoints available in v4 of spacex-api
- */
+/// List of all endpoints available in v4 of spacex-api
+
 class Endpoints {
   static const capsules = "capsules";
   static const company = "company";
