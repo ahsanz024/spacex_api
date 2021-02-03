@@ -87,6 +87,7 @@ class Company {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Company.fromJson(Map<String, dynamic> json) {
     _headquarters = json['headquarters'] != null
         ? Headquarters.fromJson(json['headquarters'])
@@ -108,6 +109,7 @@ class Company {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._headquarters != null) {

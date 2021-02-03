@@ -11,12 +11,14 @@ class PressurizedCapsule {
   set payloadVolume(LaunchPayloadVol payloadVolume) =>
       _payloadVolume = payloadVolume;
 
+  /// Deserialize recieved data
   PressurizedCapsule.fromJson(Map<String, dynamic> json) {
     _payloadVolume = json['payload_volume'] != null
         ? new LaunchPayloadVol.fromJson(json['payload_volume'])
         : null;
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._payloadVolume != null) {

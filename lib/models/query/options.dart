@@ -11,6 +11,7 @@ class Options {
   bool pagination;
   var populate;
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['select'] = this.select;

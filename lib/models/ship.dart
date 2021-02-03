@@ -124,6 +124,7 @@ class Ship {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Ship.fromJson(Map<String, dynamic> json) {
     _legacyId = json['legacy_id'];
     _model = json['model'];
@@ -151,6 +152,7 @@ class Ship {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['legacy_id'] = this._legacyId;

@@ -64,6 +64,7 @@ class Engines {
   num get thrustToWeight => _thrustToWeight;
   set thrustToWeight(num thrustToWeight) => _thrustToWeight = thrustToWeight;
 
+  /// Deserialize recieved data
   Engines.fromJson(Map<String, dynamic> json) {
     _isp = json['isp'] != null ? new Isp.fromJson(json['isp']) : null;
     _thrustSeaLevel = json['thrust_sea_level'] != null
@@ -82,6 +83,7 @@ class Engines {
     _thrustToWeight = json['thrust_to_weight'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._isp != null) {

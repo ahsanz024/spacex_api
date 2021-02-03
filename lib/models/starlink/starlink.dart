@@ -46,6 +46,7 @@ class Starlink {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Starlink.fromJson(Map<String, dynamic> json) {
     _spaceTrack = json['spaceTrack'] != null
         ? new SpaceTrack.fromJson(json['spaceTrack'])
@@ -59,6 +60,7 @@ class Starlink {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._spaceTrack != null) {

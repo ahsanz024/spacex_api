@@ -49,6 +49,7 @@ class Capsule {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Capsule.fromJson(Map<String, dynamic> json) {
     _reuseCount = json['reuse_count'];
     _waterLandings = json['water_landings'];
@@ -61,6 +62,7 @@ class Capsule {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
     data['reuse_count'] = this._reuseCount;

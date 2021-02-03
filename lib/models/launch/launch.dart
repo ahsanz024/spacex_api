@@ -141,6 +141,7 @@ class Launch {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Launch.fromJson(Map<String, dynamic> json) {
     _fairings = json['fairings'] != null
         ? new Fairings.fromJson(json['fairings'])
@@ -197,6 +198,7 @@ class Launch {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._fairings != null) {

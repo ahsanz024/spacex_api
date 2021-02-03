@@ -135,6 +135,7 @@ class Dragon {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Dragon.fromJson(Map<String, dynamic> json) {
     _heatShield = json['heat_shield'] != null
         ? new HeatShield.fromJson(json['heat_shield'])
@@ -182,6 +183,7 @@ class Dragon {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._heatShield != null) {

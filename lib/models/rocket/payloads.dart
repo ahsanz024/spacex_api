@@ -15,6 +15,7 @@ class Payloads {
   String get option1 => _option1;
   set option1(String option1) => _option1 = option1;
 
+  /// Deserialize recieved data
   Payloads.fromJson(Map<String, dynamic> json) {
     _compositeFairing = json['composite_fairing'] != null
         ? new CompositeFairing.fromJson(json['composite_fairing'])
@@ -22,6 +23,7 @@ class Payloads {
     _option1 = json['option_1'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._compositeFairing != null) {

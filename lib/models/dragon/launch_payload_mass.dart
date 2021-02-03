@@ -12,11 +12,13 @@ class LaunchPayloadMass {
   num get lb => _lb;
   set lb(num lb) => _lb = lb;
 
+  /// Deserialize recieved data
   LaunchPayloadMass.fromJson(Map<String, dynamic> json) {
     _kg = json['kg'];
     _lb = json['lb'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['kg'] = this._kg;

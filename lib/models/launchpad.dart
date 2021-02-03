@@ -75,6 +75,7 @@ class Launchpad {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Launchpad.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     fullName = json['full_name'];
@@ -92,6 +93,7 @@ class Launchpad {
     id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = name;

@@ -12,11 +12,13 @@ class Patch {
   String get large => _large;
   set large(String large) => _large = large;
 
+  /// Deserialize recieved data
   Patch.fromJson(Map<String, dynamic> json) {
     _small = json['small'];
     _large = json['large'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['small'] = this._small;

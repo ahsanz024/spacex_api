@@ -142,6 +142,7 @@ class Roadster {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Roadster.fromJson(Map<String, dynamic> json) {
     _flickrImages = json['flickr_images']?.cast<String>();
     _name = json['name'];
@@ -172,6 +173,7 @@ class Roadster {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['flickr_images'] = this._flickrImages;

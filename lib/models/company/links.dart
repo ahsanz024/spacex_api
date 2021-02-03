@@ -20,6 +20,7 @@ class Links {
   String get elonTwitter => _elonTwitter;
   set elonTwitter(String elonTwitter) => _elonTwitter = elonTwitter;
 
+  /// Deserialize recieved data
   Links.fromJson(Map<String, dynamic> json) {
     _website = json['website'];
     _flickr = json['flickr'];
@@ -27,6 +28,7 @@ class Links {
     _elonTwitter = json['elon_twitter'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['website'] = this._website;

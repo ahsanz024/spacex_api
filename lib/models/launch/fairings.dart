@@ -25,6 +25,7 @@ class Fairings {
   List<String> get shipsIds => _shipsIds;
   set shipsIds(List<String> shipsIds) => _shipsIds = shipsIds;
 
+  /// Deserialize recieved data
   Fairings.fromJson(Map<String, dynamic> json) {
     _reused = json['reused'];
     _recoveryAttempt = json['recovery_attempt'];
@@ -37,6 +38,7 @@ class Fairings {
     }
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['reused'] = this._reused;

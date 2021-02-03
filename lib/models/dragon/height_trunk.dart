@@ -12,11 +12,13 @@ class HeightWTrunk {
   num get feet => _feet;
   set feet(num feet) => _feet = feet;
 
+  /// Deserialize recieved data
   HeightWTrunk.fromJson(Map<String, dynamic> json) {
     _meters = json['meters'];
     _feet = json['feet'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['meters'] = this._meters;

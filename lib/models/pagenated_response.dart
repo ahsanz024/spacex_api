@@ -25,6 +25,7 @@ class PagenatedResponse {
     this.nextPage,
   });
 
+  /// Deserialize recieved data
   PagenatedResponse.fromJson(Map<String, dynamic> json) {
     if (json['docs'] != null) {
       docs = new List();
@@ -44,6 +45,7 @@ class PagenatedResponse {
     nextPage = json['nextPage'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.docs != null) {

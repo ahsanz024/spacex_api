@@ -212,6 +212,7 @@ class SpaceTrack {
   String get tLELINE2 => _tLELINE2;
   set tLELINE2(String tLELINE2) => _tLELINE2 = tLELINE2;
 
+  /// Deserialize recieved data
   SpaceTrack.fromJson(Map<String, dynamic> json) {
     _cCSDSOMMVERS = json['CCSDS_OMM_VERS'];
     _cOMMENT = json['COMMENT'];
@@ -256,6 +257,7 @@ class SpaceTrack {
     _tLELINE2 = json['TLE_LINE2'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['CCSDS_OMM_VERS'] = this._cCSDSOMMVERS;
