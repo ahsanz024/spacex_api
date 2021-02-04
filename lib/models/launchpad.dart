@@ -85,8 +85,8 @@ class Launchpad {
     longitude = json['longitude'];
     launchAttempts = json['launch_attempts'];
     launchSuccesses = json['launch_successes'];
-    rockets = json['rockets'];
-    launches = json['launches'];
+    rockets = json['rockets']?.cast<String>();
+    launches = json['launches']?.cast<String>();
     details = json['details'];
     status = json['status'];
     id = json['id'];
