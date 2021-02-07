@@ -16,12 +16,14 @@ class Headquarters {
   String get state => _state;
   set state(String state) => _state = state;
 
+  /// Deserialize recieved data
   Headquarters.fromJson(Map<String, dynamic> json) {
     _address = json['address'];
     _city = json['city'];
     _state = json['state'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['address'] = this._address;

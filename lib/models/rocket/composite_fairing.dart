@@ -14,6 +14,7 @@ class CompositeFairing {
   Diameter get diameter => _diameter;
   set diameter(Diameter diameter) => _diameter = diameter;
 
+  /// Deserialize recieved data
   CompositeFairing.fromJson(Map<String, dynamic> json) {
     _height =
         json['height'] != null ? new Diameter.fromJson(json['height']) : null;
@@ -22,6 +23,7 @@ class CompositeFairing {
         : null;
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._height != null) {

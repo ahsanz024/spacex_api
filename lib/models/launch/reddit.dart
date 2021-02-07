@@ -20,6 +20,7 @@ class Reddit {
   String get recovery => _recovery;
   set recovery(String recovery) => _recovery = recovery;
 
+  /// Deserialize recieved data
   Reddit.fromJson(Map<String, dynamic> json) {
     _campaign = json['campaign'];
     _launch = json['launch'];
@@ -27,6 +28,7 @@ class Reddit {
     _recovery = json['recovery'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['campaign'] = this._campaign;

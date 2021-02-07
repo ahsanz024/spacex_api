@@ -16,12 +16,14 @@ class Failures {
   String get reason => _reason;
   set reason(String reason) => _reason = reason;
 
+  /// Deserialize recieved data
   Failures.fromJson(Map<String, dynamic> json) {
     _time = json['time'];
     _altitude = json['altitude'];
     _reason = json['reason'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['time'] = this._time;

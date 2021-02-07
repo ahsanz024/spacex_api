@@ -12,6 +12,7 @@ class Flickr {
   List<String> get original => _original;
   set original(List<String> original) => _original = original;
 
+  /// Deserialize recieved data
   Flickr.fromJson(Map<String, dynamic> json) {
     if (json['small'] != null) {
       _small = new List<String>();
@@ -27,6 +28,7 @@ class Flickr {
     }
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._small != null) {

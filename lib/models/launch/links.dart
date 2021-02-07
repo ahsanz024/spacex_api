@@ -49,6 +49,7 @@ class Links {
   String get wikipedia => _wikipedia;
   set wikipedia(String wikipedia) => _wikipedia = wikipedia;
 
+  /// Deserialize recieved data
   Links.fromJson(Map<String, dynamic> json) {
     _patch = json['patch'] != null ? new Patch.fromJson(json['patch']) : null;
     _reddit =
@@ -62,6 +63,7 @@ class Links {
     _wikipedia = json['wikipedia'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._patch != null) {

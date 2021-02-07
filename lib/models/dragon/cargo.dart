@@ -13,11 +13,13 @@ class Cargo {
   set unpressurizedCargo(bool unpressurizedCargo) =>
       _unpressurizedCargo = unpressurizedCargo;
 
+  /// Deserialize recieved data
   Cargo.fromJson(Map<String, dynamic> json) {
     _solarArray = json['solar_array'];
     _unpressurizedCargo = json['unpressurized_cargo'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['solar_array'] = this._solarArray;

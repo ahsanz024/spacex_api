@@ -38,6 +38,7 @@ class FirstStage {
   num get burnTimeSec => _burnTimeSec;
   set burnTimeSec(num burnTimeSec) => _burnTimeSec = burnTimeSec;
 
+  /// Deserialize recieved data
   FirstStage.fromJson(Map<String, dynamic> json) {
     _thrustSeaLevel = json['thrust_sea_level'] != null
         ? new ThrustSeaLevel.fromJson(json['thrust_sea_level'])
@@ -51,6 +52,7 @@ class FirstStage {
     _burnTimeSec = json['burn_time_sec'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._thrustSeaLevel != null) {

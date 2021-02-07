@@ -20,6 +20,7 @@ class PayloadWeights {
   num get lb => _lb;
   set lb(num lb) => _lb = lb;
 
+  /// Deserialize recieved data
   PayloadWeights.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
     _name = json['name'];
@@ -27,6 +28,7 @@ class PayloadWeights {
     _lb = json['lb'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this._id;

@@ -41,6 +41,7 @@ class Thrusters {
   Thrust get thrust => _thrust;
   set thrust(Thrust thrust) => _thrust = thrust;
 
+  /// Deserialize recieved data
   Thrusters.fromJson(Map<String, dynamic> json) {
     _type = json['type'];
     _amount = json['amount'];
@@ -52,6 +53,7 @@ class Thrusters {
         json['thrust'] != null ? new Thrust.fromJson(json['thrust']) : null;
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['type'] = this._type;

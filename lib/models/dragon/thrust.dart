@@ -12,11 +12,13 @@ class Thrust {
   num get lbf => _lbf;
   set lbf(num lbf) => _lbf = lbf;
 
+  /// Deserialize recieved data
   Thrust.fromJson(Map<String, dynamic> json) {
     _kN = json['kN'];
     _lbf = json['lbf'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['kN'] = this._kN;

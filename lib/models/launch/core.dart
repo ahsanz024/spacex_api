@@ -49,6 +49,7 @@ class Cores {
   String get landpad => _landpad;
   set landpad(String landpad) => _landpad = landpad;
 
+  /// Deserialize recieved data
   Cores.fromJson(Map<String, dynamic> json) {
     _core = json['core'];
     _flight = json['flight'];
@@ -61,6 +62,7 @@ class Cores {
     _landpad = json['landpad'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['core'] = this._core;

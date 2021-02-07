@@ -87,11 +87,12 @@ class Company {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Company.fromJson(Map<String, dynamic> json) {
     _headquarters = json['headquarters'] != null
         ? Headquarters.fromJson(json['headquarters'])
         : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _links = json['links'] != null ? Links.fromJson(json['links']) : null;
     _name = json['name'];
     _founder = json['founder'];
     _founded = json['founded'];
@@ -108,6 +109,7 @@ class Company {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._headquarters != null) {

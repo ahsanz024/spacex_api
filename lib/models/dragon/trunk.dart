@@ -15,6 +15,7 @@ class Trunk {
   Cargo get cargo => _cargo;
   set cargo(Cargo cargo) => _cargo = cargo;
 
+  /// Deserialize recieved data
   Trunk.fromJson(Map<String, dynamic> json) {
     _trunkVolume = json['trunk_volume'] != null
         ? new LaunchPayloadVol.fromJson(json['trunk_volume'])
@@ -22,6 +23,7 @@ class Trunk {
     _cargo = json['cargo'] != null ? new Cargo.fromJson(json['cargo']) : null;
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._trunkVolume != null) {

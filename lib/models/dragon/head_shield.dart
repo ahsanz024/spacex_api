@@ -21,6 +21,7 @@ class HeatShield {
   String get devPartner => _devPartner;
   set devPartner(String devPartner) => _devPartner = devPartner;
 
+  /// Deserialize recieved data
   HeatShield.fromJson(Map<String, dynamic> json) {
     _material = json['material'];
     _sizeMeters = json['size_meters'];
@@ -28,6 +29,7 @@ class HeatShield {
     _devPartner = json['dev_partner'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['material'] = this._material;

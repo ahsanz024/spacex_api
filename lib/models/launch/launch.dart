@@ -141,11 +141,12 @@ class Launch {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Launch.fromJson(Map<String, dynamic> json) {
     _fairings = json['fairings'] != null
         ? new Fairings.fromJson(json['fairings'])
         : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _links = json['links'] != null ? Links.fromJson(json['links']) : null;
     _staticFireDateUtc = json['static_fire_date_utc'];
     _staticFireDateUnix = json['static_fire_date_unix'];
     _tbd = json['tbd'];
@@ -197,6 +198,7 @@ class Launch {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._fairings != null) {

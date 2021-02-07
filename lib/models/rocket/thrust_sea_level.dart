@@ -12,11 +12,13 @@ class ThrustSeaLevel {
   num get lbf => _lbf;
   set lbf(num lbf) => _lbf = lbf;
 
+  /// Deserialize recieved data
   ThrustSeaLevel.fromJson(Map<String, dynamic> json) {
     _kN = json['kN'];
     _lbf = json['lbf'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['kN'] = this._kN;

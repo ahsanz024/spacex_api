@@ -12,11 +12,13 @@ class LaunchPayloadVol {
   num get cubicFeet => _cubicFeet;
   set cubicFeet(num cubicFeet) => _cubicFeet = cubicFeet;
 
+  /// Deserialize recieved data
   LaunchPayloadVol.fromJson(Map<String, dynamic> json) {
     _cubicMeters = json['cubic_meters'];
     _cubicFeet = json['cubic_feet'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['cubic_meters'] = this._cubicMeters;

@@ -39,6 +39,7 @@ class Crew {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Crew.fromJson(Map<String, dynamic> json) {
     _name = json['name'];
     _agency = json['agency'];
@@ -49,6 +50,7 @@ class Crew {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this._name;

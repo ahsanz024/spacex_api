@@ -152,6 +152,7 @@ class Payload {
   String get id => _id;
   set id(String id) => _id = id;
 
+  /// Deserialize recieved data
   Payload.fromJson(Map<String, dynamic> json) {
     _dragon =
         json['dragon'] != null ? new Dragon.fromJson(json['dragon']) : null;
@@ -189,6 +190,7 @@ class Payload {
     _id = json['id'];
   }
 
+  /// Serializer
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this._dragon != null) {
