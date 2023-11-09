@@ -110,13 +110,9 @@ class Company {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._headquarters != null) {
-      data['headquarters'] = this._headquarters.toJson();
-    }
-    if (this._links != null) {
+    data['headquarters'] = this._headquarters.toJson();
       data['links'] = this._links.toJson();
-    }
-    data['name'] = this._name;
+      data['name'] = this._name;
     data['founder'] = this._founder;
     data['founded'] = this._founded;
     data['employees'] = this._employees;

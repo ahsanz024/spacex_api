@@ -199,13 +199,9 @@ class Launch {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._fairings != null) {
-      data['fairings'] = this._fairings.toJson();
-    }
-    if (this._links != null) {
+    data['fairings'] = this._fairings.toJson();
       data['links'] = this._links.toJson();
-    }
-    data['static_fire_date_utc'] = this._staticFireDateUtc;
+      data['static_fire_date_utc'] = this._staticFireDateUtc;
     data['static_fire_date_unix'] = this._staticFireDateUnix;
     data['tbd'] = this._tbd;
     data['net'] = this._net;
@@ -213,32 +209,22 @@ class Launch {
     data['rocket'] = this._rocket;
     data['success'] = this._success;
     data['details'] = this._details;
-    if (this._crew != null) {
-      data['crew'] = this._crew.map((v) => v).toList();
-    }
-    if (this._shipsIds != null) {
+    data['crew'] = this._crew.map((v) => v).toList();
       data['ships'] = this._shipsIds.map((v) => v).toList();
-    }
-    if (this._capsules != null) {
       data['capsules'] = this._capsules.map((v) => v).toList();
-    }
-    data['payloads'] = this._payloads;
+      data['payloads'] = this._payloads;
     data['launchpad'] = this._launchpad;
     data['auto_update'] = this._autoUpdate;
-    if (this._failures != null) {
-      data['failures'] = this._failures.map((v) => v.toJson()).toList();
-    }
-    data['flight_number'] = this._flightNumber;
+    data['failures'] = this._failures.map((v) => v.toJson()).toList();
+      data['flight_number'] = this._flightNumber;
     data['name'] = this._name;
     data['date_utc'] = this._dateUtc;
     data['date_unix'] = this._dateUnix;
     data['date_local'] = this._dateLocal;
     data['date_precision'] = this._datePrecision;
     data['upcoming'] = this._upcoming;
-    if (this._cores != null) {
-      data['cores'] = this._cores.map((v) => v.toJson()).toList();
-    }
-    data['id'] = this._id;
+    data['cores'] = this._cores.map((v) => v.toJson()).toList();
+      data['id'] = this._id;
     return data;
   }
 }

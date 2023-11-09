@@ -84,16 +84,10 @@ class Engines {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._isp != null) {
-      data['isp'] = this._isp.toJson();
-    }
-    if (this._thrustSeaLevel != null) {
+    data['isp'] = this._isp.toJson();
       data['thrust_sea_level'] = this._thrustSeaLevel.toJson();
-    }
-    if (this._thrustVacuum != null) {
       data['thrust_vacuum'] = this._thrustVacuum.toJson();
-    }
-    data['number'] = this._number;
+      data['number'] = this._number;
     data['type'] = this._type;
     data['version'] = this._version;
     data['layout'] = this._layout;

@@ -11,9 +11,8 @@ class Requestor {
   }) {
     if (id != null) {
       return getById(endpoint, id);
-    } else if (query != null) {
-      return postMethod(endpoint, query, header);
-    }
+    } else    return postMethod(endpoint, query, header);
+  
     return getMethod(endpoint);
   }
 

@@ -29,12 +29,8 @@ class Flickr {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._small != null) {
-      data['small'] = this._small.map((v) => v).toList();
-    }
-    if (this._original != null) {
+    data['small'] = this._small.map((v) => v).toList();
       data['original'] = this._original.map((v) => v).toList();
-    }
-    return data;
+      return data;
   }
 }

@@ -19,9 +19,7 @@ class PressurizedCapsule {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._payloadVolume != null) {
-      data['payload_volume'] = this._payloadVolume.toJson();
-    }
-    return data;
+    data['payload_volume'] = this._payloadVolume.toJson();
+      return data;
   }
 }

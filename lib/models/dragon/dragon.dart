@@ -184,34 +184,16 @@ class Dragon {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._heatShield != null) {
-      data['heat_shield'] = this._heatShield.toJson();
-    }
-    if (this._launchPayloadMass != null) {
+    data['heat_shield'] = this._heatShield.toJson();
       data['launch_payload_mass'] = this._launchPayloadMass.toJson();
-    }
-    if (this._launchPayloadVol != null) {
       data['launch_payload_vol'] = this._launchPayloadVol.toJson();
-    }
-    if (this._returnPayloadMass != null) {
       data['return_payload_mass'] = this._returnPayloadMass.toJson();
-    }
-    if (this._returnPayloadVol != null) {
       data['return_payload_vol'] = this._returnPayloadVol.toJson();
-    }
-    if (this._pressurizedCapsule != null) {
       data['pressurized_capsule'] = this._pressurizedCapsule.toJson();
-    }
-    if (this._trunk != null) {
       data['trunk'] = this._trunk.toJson();
-    }
-    if (this._heightWTrunk != null) {
       data['height_w_trunk'] = this._heightWTrunk.toJson();
-    }
-    if (this._diameter != null) {
       data['diameter'] = this._diameter.toJson();
-    }
-    data['first_flight'] = this._firstFlight;
+      data['first_flight'] = this._firstFlight;
     data['flickr_images'] = this._flickrImages;
     data['name'] = this._name;
     data['type'] = this._type;
@@ -221,10 +203,8 @@ class Dragon {
     data['orbit_duration_yr'] = this._orbitDurationYr;
     data['dry_mass_kg'] = this._dryMassKg;
     data['dry_mass_lb'] = this._dryMassLb;
-    if (this._thrusters != null) {
-      data['thrusters'] = this._thrusters.map((v) => v.toJson()).toList();
-    }
-    data['wikipedia'] = this._wikipedia;
+    data['thrusters'] = this._thrusters.map((v) => v.toJson()).toList();
+      data['wikipedia'] = this._wikipedia;
     data['description'] = this._description;
     data['id'] = this._id;
     return data;

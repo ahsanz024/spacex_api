@@ -47,10 +47,8 @@ class History {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._links != null) {
-      data['links'] = this._links.toJson();
-    }
-    data['title'] = this._title;
+    data['links'] = this._links.toJson();
+      data['title'] = this._title;
     data['event_date_utc'] = this._eventDateUtc;
     data['event_date_unix'] = this._eventDateUnix;
     data['details'] = this._details;

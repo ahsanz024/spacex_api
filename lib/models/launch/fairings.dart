@@ -42,9 +42,7 @@ class Fairings {
     data['reused'] = this._reused;
     data['recovery_attempt'] = this._recoveryAttempt;
     data['recovered'] = this._recovered;
-    if (this._shipsIds != null) {
-      data['ships'] = this._shipsIds.map((v) => v).toList();
-    }
-    return data;
+    data['ships'] = this._shipsIds.map((v) => v).toList();
+      return data;
   }
 }

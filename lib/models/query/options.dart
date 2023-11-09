@@ -20,7 +20,7 @@ class Options {
     data['limit'] = this.limit;
     data['pagination'] = this.pagination;
     data['populate'] = this.populate;
-    data.removeWhere((key, value) => key == null || value == null);
+    data.removeWhere((key, value) => value == null);
     final Map<String, dynamic> options = new Map<String, dynamic>();
     options['options'] = data;
     return options;

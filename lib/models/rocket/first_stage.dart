@@ -53,13 +53,9 @@ class FirstStage {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._thrustSeaLevel != null) {
-      data['thrust_sea_level'] = this._thrustSeaLevel.toJson();
-    }
-    if (this._thrustVacuum != null) {
+    data['thrust_sea_level'] = this._thrustSeaLevel.toJson();
       data['thrust_vacuum'] = this._thrustVacuum.toJson();
-    }
-    data['reusable'] = this._reusable;
+      data['reusable'] = this._reusable;
     data['engines'] = this._engines;
     data['fuel_amount_tons'] = this._fuelAmountTons;
     data['burn_time_sec'] = this._burnTimeSec;

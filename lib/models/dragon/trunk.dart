@@ -24,12 +24,8 @@ class Trunk {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._trunkVolume != null) {
-      data['trunk_volume'] = this._trunkVolume.toJson();
-    }
-    if (this._cargo != null) {
+    data['trunk_volume'] = this._trunkVolume.toJson();
       data['cargo'] = this._cargo.toJson();
-    }
-    return data;
+      return data;
   }
 }

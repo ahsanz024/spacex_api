@@ -53,13 +53,9 @@ class SecondStage {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._thrust != null) {
-      data['thrust'] = this._thrust.toJson();
-    }
-    if (this._payloads != null) {
+    data['thrust'] = this._thrust.toJson();
       data['payloads'] = this._payloads.toJson();
-    }
-    data['reusable'] = this._reusable;
+      data['reusable'] = this._reusable;
     data['engines'] = this._engines;
     data['fuel_amount_tons'] = this._fuelAmountTons;
     data['burn_time_sec'] = this._burnTimeSec;

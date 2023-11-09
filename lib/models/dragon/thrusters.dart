@@ -60,9 +60,7 @@ class Thrusters {
     data['fuel_1'] = this._fuel1;
     data['fuel_2'] = this._fuel2;
     data['isp'] = this._isp;
-    if (this._thrust != null) {
-      data['thrust'] = this._thrust.toJson();
-    }
-    return data;
+    data['thrust'] = this._thrust.toJson();
+      return data;
   }
 }

@@ -165,32 +165,16 @@ class Rocket {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._height != null) {
-      data['height'] = this._height.toJson();
-    }
-    if (this._diameter != null) {
+    data['height'] = this._height.toJson();
       data['diameter'] = this._diameter.toJson();
-    }
-    if (this._mass != null) {
       data['mass'] = this._mass.toJson();
-    }
-    if (this._firstStage != null) {
       data['first_stage'] = this._firstStage.toJson();
-    }
-    if (this._secondStage != null) {
       data['second_stage'] = this._secondStage.toJson();
-    }
-    if (this._engines != null) {
       data['engines'] = this._engines.toJson();
-    }
-    if (this._landingLegs != null) {
       data['landing_legs'] = this._landingLegs.toJson();
-    }
-    if (this._payloadWeights != null) {
       data['payload_weights'] =
-          this._payloadWeights.map((v) => v.toJson()).toList();
-    }
-    data['flickr_images'] = this._flickrImages;
+        this._payloadWeights.map((v) => v.toJson()).toList();
+      data['flickr_images'] = this._flickrImages;
     data['name'] = this._name;
     data['type'] = this._type;
     data['active'] = this._active;

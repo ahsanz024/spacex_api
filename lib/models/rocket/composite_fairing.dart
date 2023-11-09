@@ -24,12 +24,8 @@ class CompositeFairing {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._height != null) {
-      data['height'] = this._height.toJson();
-    }
-    if (this._diameter != null) {
+    data['height'] = this._height.toJson();
       data['diameter'] = this._diameter.toJson();
-    }
-    return data;
+      return data;
   }
 }

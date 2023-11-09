@@ -61,10 +61,8 @@ class Starlink {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._spaceTrack != null) {
-      data['spaceTrack'] = this._spaceTrack.toJson();
-    }
-    data['version'] = this._version;
+    data['spaceTrack'] = this._spaceTrack.toJson();
+      data['version'] = this._version;
     data['launch'] = this._launch;
     data['longitude'] = this._longitude;
     data['latitude'] = this._latitude;

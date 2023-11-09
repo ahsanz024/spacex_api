@@ -46,10 +46,8 @@ class PagenatedResponse {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.docs != null) {
-      data['docs'] = this.docs.map((v) => v.toJson()).toList();
-    }
-    data['totalDocs'] = this.totalDocs;
+    data['docs'] = this.docs.map((v) => v.toJson()).toList();
+      data['totalDocs'] = this.totalDocs;
     data['offset'] = this.offset;
     data['limit'] = this.limit;
     data['totalPages'] = this.totalPages;

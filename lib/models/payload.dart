@@ -191,18 +191,14 @@ class Payload {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._dragon != null) {
-      data['dragon'] = this._dragon.toJson();
-    }
-    data['name'] = this._name;
+    data['dragon'] = this._dragon.toJson();
+      data['name'] = this._name;
     data['type'] = this._type;
     data['reused'] = this._reused;
     data['launch'] = this._launch;
     data['customers'] = this._customers;
-    if (this._noradIds != null) {
-      data['norad_ids'] = this._noradIds.map((v) => v).toList();
-    }
-    data['nationalities'] = this._nationalities;
+    data['norad_ids'] = this._noradIds.map((v) => v).toList();
+      data['nationalities'] = this._nationalities;
     data['manufacturers'] = this._manufacturers;
     data['mass_kg'] = this._massKg;
     data['mass_lbs'] = this._massLbs;

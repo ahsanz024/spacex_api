@@ -24,10 +24,8 @@ class Payloads {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._compositeFairing != null) {
-      data['composite_fairing'] = this._compositeFairing.toJson();
-    }
-    data['option_1'] = this._option1;
+    data['composite_fairing'] = this._compositeFairing.toJson();
+      data['option_1'] = this._option1;
     return data;
   }
 }

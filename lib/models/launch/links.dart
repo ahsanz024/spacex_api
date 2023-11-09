@@ -64,16 +64,10 @@ class Links {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._patch != null) {
-      data['patch'] = this._patch.toJson();
-    }
-    if (this._reddit != null) {
+    data['patch'] = this._patch.toJson();
       data['reddit'] = this._reddit.toJson();
-    }
-    if (this._flickr != null) {
       data['flickr'] = this._flickr.toJson();
-    }
-    data['presskit'] = this._presskit;
+      data['presskit'] = this._presskit;
     data['webcast'] = this._webcast;
     data['youtube_id'] = this._youtubeId;
     data['article'] = this._article;
