@@ -4,10 +4,10 @@ version: 0.0.5
 homepage: 'https://github.com/ahsanz024/spacex_api'
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  http: ^0.12.2
+  http: ^1.1.0
 
 dev_dependencies:
   test: ^1.15.5
