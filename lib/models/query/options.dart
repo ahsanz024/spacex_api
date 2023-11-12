@@ -1,15 +1,25 @@
-///
-/// Accepts any of the options documented here, but here are some of the most common:
-/// https://github.com/aravindnc/mongoose-paginate-v2#modelpaginatequery-options-callback
-///
 class Options {
   var select;
   var sort;
-  num offset;
-  num page;
-  num limit;
-  bool pagination;
+  late num offset;    // marking as late if you intend to initialize them later
+  late num page;      // marking as late if you intend to initialize them later
+  late num limit;     // marking as late if you intend to initialize them later
+  late bool pagination; // marking as late if you intend to initialize them later
   var populate;
+
+  // You can initialize the non-nullable variables with default values by adding a constructor
+  Options({
+    this.select,
+    this.sort,
+    num? offset,
+    num? page,
+    num? limit,
+    bool? pagination,
+    this.populate,
+  }) : offset = offset ?? 0, // Providing default values if none were passed
+       page = page ?? 0,
+       limit = limit ?? 10, // For example, default limit of 10
+       pagination = pagination ?? true; // Defaulting to true for pagination
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

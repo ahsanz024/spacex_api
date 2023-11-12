@@ -2,20 +2,18 @@ class Thrust {
   num _kN;
   num _lbf;
 
-  Thrust({num kN, num lbf}) {
-    this._kN = kN;
-    this._lbf = lbf;
-  }
+  Thrust({required num kN, required num lbf})
+      : _kN = kN,
+        _lbf = lbf;
 
   num get kN => _kN;
   set kN(num kN) => _kN = kN;
   num get lbf => _lbf;
   set lbf(num lbf) => _lbf = lbf;
 
-  Thrust.fromJson(Map<String, dynamic> json) {
-    _kN = json['kN'];
-    _lbf = json['lbf'];
-  }
+  Thrust.fromJson(Map<String, dynamic> json)
+      : _kN = json['kN'],
+        _lbf = json['lbf'];
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

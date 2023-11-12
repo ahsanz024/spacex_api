@@ -1,8 +1,8 @@
 class Cargo {
-  num _solarArray;
-  bool _unpressurizedCargo;
+  num _solarArray = 0;
+  bool _unpressurizedCargo = false;
 
-  Cargo({num solarArray, bool unpressurizedCargo}) {
+  Cargo({required solarArray, required unpressurizedCargo}) {
     this._solarArray = solarArray;
     this._unpressurizedCargo = unpressurizedCargo;
   }

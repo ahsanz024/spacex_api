@@ -2,63 +2,51 @@ import 'payloads.dart';
 import 'thrust_sea_level.dart';
 
 class SecondStage {
-  ThrustSeaLevel _thrust;
-  Payloads _payloads;
-  bool _reusable;
-  num _engines;
-  num _fuelAmountTons;
-  num _burnTimeSec;
+  late ThrustSeaLevel thrust; // Assuming 'ThrustSeaLevel' requires 'kN' and 'lbf' parameters in its constructor
+  late Payloads payloads;
+  late bool reusable;
+  late num engines;
+  late num fuelAmountTons;
+  late num burnTimeSec;
 
   SecondStage({
-    ThrustSeaLevel thrust,
-    Payloads payloads,
-    bool reusable,
-    num engines,
-    num fuelAmountTons,
-    num burnTimeSec,
+    required ThrustSeaLevel thrust, // Make sure 'ThrustSeaLevel' constructor requires 'kN' and 'lbf' parameters
+    required Payloads payloads,
+    required bool reusable,
+    required num engines,
+    required num fuelAmountTons,
+    required num burnTimeSec,
   }) {
-    this._thrust = thrust;
-    this._payloads = payloads;
-    this._reusable = reusable;
-    this._engines = engines;
-    this._fuelAmountTons = fuelAmountTons;
-    this._burnTimeSec = burnTimeSec;
+    this.thrust = thrust;
+    this.payloads = payloads;
+    this.reusable = reusable;
+    this.engines = engines;
+    this.fuelAmountTons = fuelAmountTons;
+    this.burnTimeSec = burnTimeSec;
   }
 
-  ThrustSeaLevel get thrust => _thrust;
-  set thrust(ThrustSeaLevel thrust) => _thrust = thrust;
-  Payloads get payloads => _payloads;
-  set payloads(Payloads payloads) => _payloads = payloads;
-  bool get reusable => _reusable;
-  set reusable(bool reusable) => _reusable = reusable;
-  num get engines => _engines;
-  set engines(num engines) => _engines = engines;
-  num get fuelAmountTons => _fuelAmountTons;
-  set fuelAmountTons(num fuelAmountTons) => _fuelAmountTons = fuelAmountTons;
-  num get burnTimeSec => _burnTimeSec;
-  set burnTimeSec(num burnTimeSec) => _burnTimeSec = burnTimeSec;
-
   SecondStage.fromJson(Map<String, dynamic> json) {
-    _thrust = json['thrust'] != null
-        ? new ThrustSeaLevel.fromJson(json['thrust'])
-        : null;
-    _payloads = json['payloads'] != null
-        ? new Payloads.fromJson(json['payloads'])
-        : null;
-    _reusable = json['reusable'];
-    _engines = json['engines'];
-    _fuelAmountTons = json['fuel_amount_tons'];
-    _burnTimeSec = json['burn_time_sec'];
+    thrust = json['thrust'] != null
+        ? ThrustSeaLevel.fromJson(json['thrust'])
+        : ThrustSeaLevel(kN: 0, lbf: 0); // Provide default values for 'kN' and 'lbf'
+    payloads = json['payloads'] != null
+        ? Payloads.fromJson(json['payloads'])
+        : Payloads(); // You can change the default value accordingly.
+    reusable = json['reusable'] ?? false; // You can change the default value accordingly.
+    engines = json['engines'] ?? 0; // You can change the default value accordingly.
+    fuelAmountTons = json['fuel_amount_tons'] ?? 0; // You can change the default value accordingly.
+    burnTimeSec = json['burn_time_sec'] ?? 0; // You can change the default value accordingly.
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['thrust'] = this._thrust.toJson();
-      data['payloads'] = this._payloads.toJson();
-      data['reusable'] = this._reusable;
-    data['engines'] = this._engines;
-    data['fuel_amount_tons'] = this._fuelAmountTons;
-    data['burn_time_sec'] = this._burnTimeSec;
+    final Map<String, dynamic> data = {
+      'thrust': thrust.toJson(),
+      'payloads': payloads.toJson(),
+      'reusable': reusable,
+      'engines': engines,
+      'fuel_amount_tons': fuelAmountTons,
+      'burn_time_sec': burnTimeSec,
+    };
     return data;
   }
 }

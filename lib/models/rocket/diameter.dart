@@ -1,10 +1,10 @@
 class Diameter {
-  num _meters;
-  num _feet;
+  late num _meters;
+  late num _feet;
 
-  Diameter({num meters, num feet}) {
-    this._meters = meters;
-    this._feet = feet;
+  Diameter({num? meters, num? feet}) {
+    _meters = meters ?? 0; // Initialize with default value if not provided
+    _feet = feet ?? 0; // Initialize with default value if not provided
   }
 
   num get meters => _meters;
@@ -13,14 +13,14 @@ class Diameter {
   set feet(num feet) => _feet = feet;
 
   Diameter.fromJson(Map<String, dynamic> json) {
-    _meters = json['meters'];
-    _feet = json['feet'];
+    _meters = json['meters'] ?? 0; // Initialize with default value if not provided
+    _feet = json['feet'] ?? 0; // Initialize with default value if not provided
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['meters'] = this._meters;
-    data['feet'] = this._feet;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['meters'] = _meters;
+    data['feet'] = _feet;
     return data;
   }
 }

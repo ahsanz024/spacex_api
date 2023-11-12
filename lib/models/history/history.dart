@@ -8,19 +8,36 @@ class History {
   String _details;
   String _id;
 
-  History(
-      {Links links,
-      String title,
-      String eventDateUtc,
-      num eventDateUnix,
-      String details,
-      String id}) {
-    this._links = links;
-    this._title = title;
-    this._eventDateUtc = eventDateUtc;
-    this._eventDateUnix = eventDateUnix;
-    this._details = details;
-    this._id = id;
+  History({
+    required Links links,
+    required String title,
+    required String eventDateUtc,
+    required num eventDateUnix,
+    required String details,
+    required String id,
+  })  : _links = links,
+        _title = title,
+        _eventDateUtc = eventDateUtc,
+        _eventDateUnix = eventDateUnix,
+        _details = details,
+        _id = id;
+
+  factory History.fromJson(Map<String, dynamic> json) {
+    if (json['links'] == null) throw ArgumentError('links cannot be null');
+    if (json['title'] == null) throw ArgumentError('title cannot be null');
+    if (json['event_date_utc'] == null) throw ArgumentError('event_date_utc cannot be null');
+    if (json['event_date_unix'] == null) throw ArgumentError('event_date_unix cannot be null');
+    if (json['details'] == null) throw ArgumentError('details cannot be null');
+    if (json['id'] == null) throw ArgumentError('id cannot be null');
+
+    return History(
+      links: Links.fromJson(json['links']),
+      title: json['title'],
+      eventDateUtc: json['event_date_utc'],
+      eventDateUnix: json['event_date_unix'],
+      details: json['details'],
+      id: json['id'],
+    );
   }
 
   Links get links => _links;
@@ -36,23 +53,14 @@ class History {
   String get id => _id;
   set id(String id) => _id = id;
 
-  History.fromJson(Map<String, dynamic> json) {
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
-    _title = json['title'];
-    _eventDateUtc = json['event_date_utc'];
-    _eventDateUnix = json['event_date_unix'];
-    _details = json['details'];
-    _id = json['id'];
-  }
-
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['links'] = this._links.toJson();
-      data['title'] = this._title;
-    data['event_date_utc'] = this._eventDateUtc;
-    data['event_date_unix'] = this._eventDateUnix;
-    data['details'] = this._details;
-    data['id'] = this._id;
-    return data;
+    return {
+      'links': this._links.toJson(),
+      'title': this._title,
+      'event_date_utc': this._eventDateUtc,
+      'event_date_unix': this._eventDateUnix,
+      'details': this._details,
+      'id': this._id,
+    };
   }
 }

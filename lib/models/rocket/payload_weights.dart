@@ -1,22 +1,30 @@
 class PayloadWeights {
-  String _id;
-  String _name;
-  num _kg;
-  num _lb;
+  late String _id;
+  late String _name;
+  late num _kg;
+  late num _lb;
 
-  PayloadWeights({String id, String name, num kg, num lb}) {
-    this._id = id;
-    this._name = name;
-    this._kg = kg;
-    this._lb = lb;
+  PayloadWeights({
+    required String id,
+    required String name,
+    required num kg,
+    required num lb,
+  }) {
+    _id = id;
+    _name = name;
+    _kg = kg;
+    _lb = lb;
   }
 
   String get id => _id;
   set id(String id) => _id = id;
+
   String get name => _name;
   set name(String name) => _name = name;
+
   num get kg => _kg;
   set kg(num kg) => _kg = kg;
+
   num get lb => _lb;
   set lb(num lb) => _lb = lb;
 
@@ -28,11 +36,11 @@ class PayloadWeights {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this._id;
-    data['name'] = this._name;
-    data['kg'] = this._kg;
-    data['lb'] = this._lb;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = _id;
+    data['name'] = _name;
+    data['kg'] = _kg;
+    data['lb'] = _lb;
     return data;
   }
 }

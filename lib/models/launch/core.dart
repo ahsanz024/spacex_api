@@ -1,33 +1,34 @@
 class Cores {
-  String _core;
-  num _flight;
-  bool _gridfins;
-  bool _legs;
-  bool _reused;
-  bool _landingAttempt;
-  bool _landingSuccess;
-  String _landingType;
-  String _landpad;
+  late String _core;
+  late num _flight;
+  late bool _gridfins;
+  late bool _legs;
+  late bool _reused;
+  late bool _landingAttempt;
+  late bool _landingSuccess;
+  late String _landingType;
+  late String _landpad;
 
-  Cores(
-      {String core,
-      num flight,
-      bool gridfins,
-      bool legs,
-      bool reused,
-      bool landingAttempt,
-      bool landingSuccess,
-      String landingType,
-      String landpad}) {
-    this._core = core;
-    this._flight = flight;
-    this._gridfins = gridfins;
-    this._legs = legs;
-    this._reused = reused;
-    this._landingAttempt = landingAttempt;
-    this._landingSuccess = landingSuccess;
-    this._landingType = landingType;
-    this._landpad = landpad;
+  Cores({
+    required String core,
+    required num flight,
+    required bool gridfins,
+    required bool legs,
+    required bool reused,
+    required bool landingAttempt,
+    required bool landingSuccess,
+    required String landingType,
+    required String landpad,
+  }) {
+    _core = core;
+    _flight = flight;
+    _gridfins = gridfins;
+    _legs = legs;
+    _reused = reused;
+    _landingAttempt = landingAttempt;
+    _landingSuccess = landingSuccess;
+    _landingType = landingType;
+    _landpad = landpad;
   }
 
   String get core => _core;

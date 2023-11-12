@@ -2,35 +2,27 @@ class Flickr {
   List<String> _small;
   List<String> _original;
 
-  Flickr({List<String> small, List<String> original}) {
-    this._small = small;
-    this._original = original;
-  }
+  // Use required keyword to ensure these fields are passed when the object is instantiated.
+  // Provide a default empty list to avoid null errors.
+  Flickr({
+    required List<String> small,
+    required List<String> original,
+  }) : _small = small,
+       _original = original;
 
   List<String> get small => _small;
   set small(List<String> small) => _small = small;
   List<String> get original => _original;
   set original(List<String> original) => _original = original;
 
-  Flickr.fromJson(Map<String, dynamic> json) {
-    if (json['small'] != null) {
-      _small = new List<String>();
-      json['small'].forEach((v) {
-        _small.add(v);
-      });
-    }
-    if (json['original'] != null) {
-      _original = new List<String>();
-      json['original'].forEach((v) {
-        _original.add(v);
-      });
-    }
-  }
+  Flickr.fromJson(Map<String, dynamic> json)
+      : _small = List<String>.from(json['small'] ?? []),
+        _original = List<String>.from(json['original'] ?? []);
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['small'] = this._small.map((v) => v).toList();
-      data['original'] = this._original.map((v) => v).toList();
-      return data;
+    data['small'] = this._small;
+    data['original'] = this._original;
+    return data;
   }
 }

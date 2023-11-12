@@ -1,10 +1,10 @@
 class Height {
-  num _meters;
-  num _feet;
+  late num _meters;
+  late num _feet;
 
-  Height({num meters, num feet}) {
-    this._meters = meters;
-    this._feet = feet;
+  Height({num? meters, num? feet}) {
+    _meters = meters ?? 0; // Default to 0 if meters is null
+    _feet = feet ?? 0;     // Default to 0 if feet is null
   }
 
   num get meters => _meters;
@@ -13,14 +13,14 @@ class Height {
   set feet(num feet) => _feet = feet;
 
   Height.fromJson(Map<String, dynamic> json) {
-    _meters = json['meters'];
-    _feet = json['feet'];
+    _meters = json['meters'] ?? 0; // Default to 0 if meters is missing
+    _feet = json['feet'] ?? 0;     // Default to 0 if feet is missing
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['meters'] = this._meters;
-    data['feet'] = this._feet;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['meters'] = _meters;
+    data['feet'] = _feet;
     return data;
   }
 }

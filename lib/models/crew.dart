@@ -1,20 +1,20 @@
 class Crew {
-  String _name;
-  String _agency;
-  String _image;
-  String _wikipedia;
-  List<String> _launches;
-  String _status;
-  String _id;
+  String _name = '';
+  String _agency = '';
+  String _image = '';
+  String _wikipedia = '';
+  List<String> _launches = [];
+  String _status = '';
+  String _id = '';
 
   Crew(
-      {String name,
-      String agency,
-      String image,
-      String wikipedia,
-      List<String> launches,
-      String status,
-      String id}) {
+      {required String name,
+      required String agency,
+      required String image,
+      required String wikipedia,
+      required List<String> launches,
+      required String status,
+      required String id}) {
     this._name = name;
     this._agency = agency;
     this._image = image;

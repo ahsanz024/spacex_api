@@ -5,27 +5,25 @@ class Trunk {
   LaunchPayloadVol _trunkVolume;
   Cargo _cargo;
 
-  Trunk({LaunchPayloadVol trunkVolume, Cargo cargo}) {
-    this._trunkVolume = trunkVolume;
-    this._cargo = cargo;
-  }
+  Trunk({
+    required LaunchPayloadVol trunkVolume,
+    required Cargo cargo,
+  })  : _trunkVolume = trunkVolume,
+        _cargo = cargo;
 
   LaunchPayloadVol get trunkVolume => _trunkVolume;
-  set trunkVolume(LaunchPayloadVol trunkVolume) => _trunkVolume = trunkVolume;
+  set trunkVolume(LaunchPayloadVol value) => _trunkVolume = value;
   Cargo get cargo => _cargo;
-  set cargo(Cargo cargo) => _cargo = cargo;
+  set cargo(Cargo value) => _cargo = value;
 
-  Trunk.fromJson(Map<String, dynamic> json) {
-    _trunkVolume = json['trunk_volume'] != null
-        ? new LaunchPayloadVol.fromJson(json['trunk_volume'])
-        : null;
-    _cargo = json['cargo'] != null ? new Cargo.fromJson(json['cargo']) : null;
-  }
+  Trunk.fromJson(Map<String, dynamic> json)
+      : _trunkVolume = LaunchPayloadVol.fromJson(json['trunk_volume'] ?? {}),
+        _cargo = Cargo.fromJson(json['cargo'] ?? {});
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['trunk_volume'] = this._trunkVolume.toJson();
-      data['cargo'] = this._cargo.toJson();
-      return data;
+    return {
+      'trunk_volume': _trunkVolume.toJson(),
+      'cargo': _cargo.toJson(),
+    };
   }
 }

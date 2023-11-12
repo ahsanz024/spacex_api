@@ -4,87 +4,86 @@ import 'fairings.dart';
 import 'links.dart';
 
 class Launch {
-  Fairings _fairings;
-  Links _links;
-  String _staticFireDateUtc;
-  num _staticFireDateUnix;
-  bool _tbd;
-  bool _net;
-  num _window;
-  String _rocket;
-  bool _success;
-  String _details;
-  List<String> _crew;
-  List<String> _shipsIds;
-  List<String> _capsules;
-  List<String> _payloads;
-  String _launchpad;
-  bool _autoUpdate;
-  List<Failures> _failures;
-  num _flightNumber;
-  String _name;
-  String _dateUtc;
-  num _dateUnix;
-  String _dateLocal;
-  String _datePrecision;
-  bool _upcoming;
-  List<Cores> _cores;
-  String _id;
+  late Fairings _fairings;
+  late Links _links;
+  late String _staticFireDateUtc;
+  late num _staticFireDateUnix;
+  late bool _tbd;
+  late bool _net;
+  late num _window;
+  late String _rocket;
+  late bool _success;
+  late String _details;
+  late List<String> _crew;
+  late List<String> _shipsIds;
+  late List<String> _capsules;
+  late List<String> _payloads;
+  late String _launchpad;
+  late bool _autoUpdate;
+  late List<Failures> _failures;
+  late num _flightNumber;
+  late String _name;
+  late String _dateUtc;
+  late num _dateUnix;
+  late String _dateLocal;
+  late String _datePrecision;
+  late bool _upcoming;
+  late List<Cores> _cores;
+  late String _id;
 
-  Launch(
-      {Fairings fairings,
-      Links links,
-      String staticFireDateUtc,
-      num staticFireDateUnix,
-      bool tbd,
-      bool net,
-      num window,
-      String rocket,
-      bool success,
-      String details,
-      List<String> crew,
-      List<String> shipsIds,
-      List<String> capsules,
-      List<String> payloads,
-      String launchpad,
-      bool autoUpdate,
-      List<Failures> failures,
-      num flightNumber,
-      String name,
-      String dateUtc,
-      num dateUnix,
-      String dateLocal,
-      String datePrecision,
-      bool upcoming,
-      List<Cores> cores,
-      String id}) {
-    this._fairings = fairings;
-    this._links = links;
-    this._staticFireDateUtc = staticFireDateUtc;
-    this._staticFireDateUnix = staticFireDateUnix;
-    this._tbd = tbd;
-    this._net = net;
-    this._window = window;
-    this._rocket = rocket;
-    this._success = success;
-    this._details = details;
-    this._crew = crew;
-    this._shipsIds = shipsIds;
-    this._capsules = capsules;
-    this._payloads = payloads;
-    this._launchpad = launchpad;
-    this._autoUpdate = autoUpdate;
-    this._failures = failures;
-    this._flightNumber = flightNumber;
-    this._name = name;
-    this._dateUtc = dateUtc;
-    this._dateUnix = dateUnix;
-    this._dateLocal = dateLocal;
-    this._datePrecision = datePrecision;
-    this._upcoming = upcoming;
-    this._cores = cores;
-    this._id = id;
-  }
+  Launch({
+    required Fairings fairings,
+    required Links links,
+    required String staticFireDateUtc,
+    required num staticFireDateUnix,
+    required bool tbd,
+    required bool net,
+    required num window,
+    required String rocket,
+    required bool success,
+    required String details,
+    required List<String> crew,
+    required List<String> shipsIds,
+    required List<String> capsules,
+    required List<String> payloads,
+    required String launchpad,
+    required bool autoUpdate,
+    required List<Failures> failures,
+    required num flightNumber,
+    required String name,
+    required String dateUtc,
+    required num dateUnix,
+    required String dateLocal,
+    required String datePrecision,
+    required bool upcoming,
+    required List<Cores> cores,
+    required String id,
+  }) : _fairings = fairings,
+       _links = links,
+       _staticFireDateUtc = staticFireDateUtc,
+       _staticFireDateUnix = staticFireDateUnix,
+       _tbd = tbd,
+       _net = net,
+       _window = window,
+       _rocket = rocket,
+       _success = success,
+       _details = details,
+       _crew = crew,
+       _shipsIds = shipsIds,
+       _capsules = capsules,
+       _payloads = payloads,
+       _launchpad = launchpad,
+       _autoUpdate = autoUpdate,
+       _failures = failures,
+       _flightNumber = flightNumber,
+       _name = name,
+       _dateUtc = dateUtc,
+       _dateUnix = dateUnix,
+       _dateLocal = dateLocal,
+       _datePrecision = datePrecision,
+       _upcoming = upcoming,
+       _cores = cores,
+       _id = id;
 
   Fairings get fairings => _fairings;
   set fairings(Fairings fairings) => _fairings = fairings;
@@ -142,60 +141,34 @@ class Launch {
   set id(String id) => _id = id;
 
   Launch.fromJson(Map<String, dynamic> json) {
-    _fairings = json['fairings'] != null
-        ? new Fairings.fromJson(json['fairings'])
-        : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
-    _staticFireDateUtc = json['static_fire_date_utc'];
-    _staticFireDateUnix = json['static_fire_date_unix'];
-    _tbd = json['tbd'];
-    _net = json['net'];
-    _window = json['window'];
-    _rocket = json['rocket'];
-    _success = json['success'];
-    _details = json['details'];
-    if (json['crew'] != null) {
-      _crew = new List<String>();
-      json['crew'].forEach((v) {
-        _crew.add(v);
-      });
-    }
-    if (json['ships'] != null) {
-      _shipsIds = new List<String>();
-      json['ships'].forEach((v) {
-        _shipsIds.add(v);
-      });
-    }
-    if (json['capsules'] != null) {
-      _capsules = new List<String>();
-      json['capsules'].forEach((v) {
-        _capsules.add(v);
-      });
-    }
-    _payloads = json['payloads']?.cast<String>();
-    _launchpad = json['launchpad'];
-    _autoUpdate = json['auto_update'];
-    if (json['failures'] != null) {
-      _failures = new List<Failures>();
-      json['failures'].forEach((v) {
-        _failures.add(new Failures.fromJson(v));
-      });
-    }
-    _flightNumber = json['flight_number'];
-    _name = json['name'];
-    _dateUtc = json['date_utc'];
-    _dateUnix = json['date_unix'];
-    _dateLocal = json['date_local'];
-    _datePrecision = json['date_precision'];
-    _upcoming = json['upcoming'];
-    if (json['cores'] != null) {
-      _cores = new List<Cores>();
-      json['cores'].forEach((v) {
-        _cores.add(new Cores.fromJson(v));
-      });
-    }
-    _id = json['id'];
+    _fairings = (json['fairings'] != null ? Fairings.fromJson(json['fairings']) : null)!;
+    _links = (json['links'] != null ? Links.fromJson(json['links']) : null)!;
+    _staticFireDateUtc = json['static_fire_date_utc'] ?? ''; // Assuming empty string as default
+    _staticFireDateUnix = json['static_fire_date_unix'] ?? 0; // Assuming zero as default
+    _tbd = json['tbd'] ?? false; // Assuming false as default
+    _net = json['net'] ?? false; // Assuming false as default
+    _window = json['window'] ?? 0; // Assuming zero as default
+    _rocket = json['rocket'] ?? ''; // Assuming empty string as default
+    _success = json['success'] ?? false; // Assuming false as default
+    _details = json['details'] ?? ''; // Assuming empty string as default
+    _crew = json['crew']?.cast<String>() ?? []; // Assuming empty list as default
+    _shipsIds = json['ships']?.cast<String>() ?? []; // Assuming empty list as default
+    _capsules = json['capsules']?.cast<String>() ?? []; // Assuming empty list as default
+    _payloads = json['payloads']?.cast<String>() ?? []; // Assuming empty list as default
+    _launchpad = json['launchpad'] ?? ''; // Assuming empty string as default
+    _autoUpdate = json['auto_update'] ?? false; // Assuming false as default
+    _failures = (json['failures'] as List?)?.map((v) => Failures.fromJson(v)).toList() ?? []; // Assuming empty list as default
+    _flightNumber = json['flight_number'] ?? 0; // Assuming zero as default
+    _name = json['name'] ?? ''; // Assuming empty string as default
+    _dateUtc = json['date_utc'] ?? ''; // Assuming empty string as default
+    _dateUnix = json['date_unix'] ?? 0; // Assuming zero as default
+    _dateLocal = json['date_local'] ?? ''; // Assuming empty string as default
+    _datePrecision = json['date_precision'] ?? ''; // Assuming empty string as default
+    _upcoming = json['upcoming'] ?? false; // Assuming false as default
+    _cores = (json['cores'] as List?)?.map((v) => Cores.fromJson(v)).toList() ?? []; // Assuming empty list as default
+    _id = json['id'] ?? ''; // Assuming empty string as default
   }
+
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

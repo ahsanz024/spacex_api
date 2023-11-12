@@ -1,5 +1,5 @@
-class PagenatedResponse {
-  List docs;
+class PagenatedResponse<T> {
+  List<T> docs;
   int totalDocs;
   int offset;
   int limit;
@@ -8,55 +8,57 @@ class PagenatedResponse {
   int pagingCounter;
   bool hasPrevPage;
   bool hasNextPage;
-  int prevPage;
-  int nextPage;
+  int? prevPage; // Nullable fields do not need to be initialized immediately.
+  int? nextPage; // Nullable fields do not need to be initialized immediately.
 
   PagenatedResponse({
-    this.docs,
-    this.totalDocs,
-    this.offset,
-    this.limit,
-    this.totalPages,
-    this.page,
-    this.pagingCounter,
-    this.hasPrevPage,
-    this.hasNextPage,
-    this.prevPage,
-    this.nextPage,
+    required this.docs,
+    required this.totalDocs,
+    required this.offset,
+    required this.limit,
+    required this.totalPages,
+    required this.page,
+    required this.pagingCounter,
+    required this.hasPrevPage,
+    required this.hasNextPage,
+    this.prevPage, // Nullable, hence not required.
+    this.nextPage, // Nullable, hence not required.
   });
 
-  PagenatedResponse.fromJson(Map<String, dynamic> json) {
-    if (json['docs'] != null) {
-      docs = new List();
-      json['docs'].forEach((v) {
-        docs.add(v);
-      });
-    }
-    totalDocs = json['totalDocs'];
-    offset = json['offset'];
-    limit = json['limit'];
-    totalPages = json['totalPages'];
-    page = json['page'];
-    pagingCounter = json['pagingCounter'];
-    hasPrevPage = json['hasPrevPage'];
-    hasNextPage = json['hasNextPage'];
-    prevPage = json['prevPage'];
-    nextPage = json['nextPage'];
+  factory PagenatedResponse.fromJson(Map<String, dynamic> json) {
+    return PagenatedResponse<T>(
+      docs: (json['docs'] as List).map((e) => e as T).toList(),
+      totalDocs: json['totalDocs'],
+      offset: json['offset'],
+      limit: json['limit'],
+      totalPages: json['totalPages'],
+      page: json['page'],
+      pagingCounter: json['pagingCounter'],
+      hasPrevPage: json['hasPrevPage'],
+      hasNextPage: json['hasNextPage'],
+      prevPage: json['prevPage'],
+      nextPage: json['nextPage'],
+    );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['docs'] = this.docs.map((v) => v.toJson()).toList();
-      data['totalDocs'] = this.totalDocs;
-    data['offset'] = this.offset;
-    data['limit'] = this.limit;
-    data['totalPages'] = this.totalPages;
-    data['page'] = this.page;
-    data['pagingCounter'] = this.pagingCounter;
-    data['hasPrevPage'] = this.hasPrevPage;
-    data['hasNextPage'] = this.hasNextPage;
-    data['prevPage'] = this.prevPage;
-    data['nextPage'] = this.nextPage;
+    if (docs.isNotEmpty) {
+      // Check if T has a toJson method, otherwise just set the value.
+      data['docs'] = docs.where((v) => v != null).map((v) => (v as dynamic).toJson()).toList();
+    } else {
+      data['docs'] = [];
+    }
+    data['totalDocs'] = totalDocs;
+    data['offset'] = offset;
+    data['limit'] = limit;
+    data['totalPages'] = totalPages;
+    data['page'] = page;
+    data['pagingCounter'] = pagingCounter;
+    data['hasPrevPage'] = hasPrevPage;
+    data['hasNextPage'] = hasNextPage;
+    data['prevPage'] = prevPage;
+    data['nextPage'] = nextPage;
     return data;
   }
 }

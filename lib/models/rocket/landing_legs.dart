@@ -1,14 +1,18 @@
 class LandingLegs {
-  num _number;
-  String _material;
+  late num _number;
+  late String _material;
 
-  LandingLegs({num number, String material}) {
-    this._number = number;
-    this._material = material;
+  LandingLegs({
+    required num number,
+    required String material,
+  }) {
+    _number = number;
+    _material = material;
   }
 
   num get number => _number;
   set number(num number) => _number = number;
+  
   String get material => _material;
   set material(String material) => _material = material;
 
@@ -18,9 +22,9 @@ class LandingLegs {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['number'] = this._number;
-    data['material'] = this._material;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['number'] = _number;
+    data['material'] = _material;
     return data;
   }
 }

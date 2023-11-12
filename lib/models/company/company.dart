@@ -2,40 +2,41 @@ import 'headquarter.dart';
 import 'links.dart';
 
 class Company {
-  Headquarters _headquarters;
-  Links _links;
-  String _name;
-  String _founder;
-  num _founded;
-  num _employees;
-  num _vehicles;
-  num _launchSites;
-  num _testSites;
-  String _ceo;
-  String _cto;
-  String _coo;
-  String _ctoPropulsion;
-  num _valuation;
-  String _summary;
-  String _id;
+  late Headquarters _headquarters;
+  late Links _links;
+  String _name = '';
+  String _founder = '';
+  num _founded = 0;
+  num _employees = 0;
+  num _vehicles = 0;
+  num _launchSites = 0;
+  num _testSites = 0;
+  String _ceo = '';
+  String _cto = '';
+  String _coo = '';
+  String _ctoPropulsion = '';
+  num _valuation = 0;
+  String _summary = '';
+  String _id = '';
 
-  Company(
-      {Headquarters headquarters,
-      Links links,
-      String name,
-      String founder,
-      num founded,
-      num employees,
-      num vehicles,
-      num launchSites,
-      num testSites,
-      String ceo,
-      String cto,
-      String coo,
-      String ctoPropulsion,
-      num valuation,
-      String summary,
-      String id}) {
+  Company({
+    required Headquarters headquarters,
+    required Links links,
+    required String name,
+    required String founder,
+    required num founded,
+    required num employees,
+    required num vehicles,
+    required num launchSites,
+    required num testSites,
+    required String ceo,
+    required String cto,
+    required String coo,
+    required String ctoPropulsion,
+    required num valuation,
+    required String summary,
+    required String id,
+  }) {
     this._headquarters = headquarters;
     this._links = links;
     this._name = name;
@@ -88,10 +89,10 @@ class Company {
   set id(String id) => _id = id;
 
   Company.fromJson(Map<String, dynamic> json) {
-    _headquarters = json['headquarters'] != null
-        ? Headquarters.fromJson(json['headquarters'])
-        : null;
-    _links = json['links'] != null ? new Links.fromJson(json['links']) : null;
+    _headquarters = (json['headquarters'] != null
+      ? Headquarters.fromJson(json['headquarters'])
+      : null)!; // Assuming Headquarters has a default constructor
+    _links = (json['links'] != null ? Links.fromJson(json['links']) : null)!; // Assuming Links has a default constructor
     _name = json['name'];
     _founder = json['founder'];
     _founded = json['founded'];

@@ -1,12 +1,12 @@
 import 'composite_fairing.dart';
 
 class Payloads {
-  CompositeFairing _compositeFairing;
-  String _option1;
+  late CompositeFairing _compositeFairing;
+  late String _option1;
 
-  Payloads({CompositeFairing compositeFairing, String option1}) {
-    this._compositeFairing = compositeFairing;
-    this._option1 = option1;
+  Payloads({CompositeFairing? compositeFairing, String? option1}) {
+    _compositeFairing = compositeFairing!;
+    _option1 = option1!;
   }
 
   CompositeFairing get compositeFairing => _compositeFairing;
@@ -17,15 +17,15 @@ class Payloads {
 
   Payloads.fromJson(Map<String, dynamic> json) {
     _compositeFairing = json['composite_fairing'] != null
-        ? new CompositeFairing.fromJson(json['composite_fairing'])
-        : null;
-    _option1 = json['option_1'];
+        ? CompositeFairing.fromJson(json['composite_fairing'])
+        : throw ArgumentError('compositeFairing must not be null');
+    _option1 = json['option_1'] ?? '';
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['composite_fairing'] = this._compositeFairing.toJson();
-      data['option_1'] = this._option1;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['composite_fairing'] = _compositeFairing.toJson();
+    data['option_1'] = _option1;
     return data;
   }
 }
