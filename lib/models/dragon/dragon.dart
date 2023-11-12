@@ -85,20 +85,15 @@ class Dragon {
   HeatShield get heatShield => _heatShield;
   set heatShield(HeatShield heatShield) => _heatShield = heatShield;
   LaunchPayloadMass get launchPayloadMass => _launchPayloadMass;
-  set launchPayloadMass(LaunchPayloadMass launchPayloadMass) =>
-      _launchPayloadMass = launchPayloadMass;
+  set launchPayloadMass(LaunchPayloadMass launchPayloadMass) => _launchPayloadMass = launchPayloadMass;
   LaunchPayloadVol get launchPayloadVol => _launchPayloadVol;
-  set launchPayloadVol(LaunchPayloadVol launchPayloadVol) =>
-      _launchPayloadVol = launchPayloadVol;
+  set launchPayloadVol(LaunchPayloadVol launchPayloadVol) => _launchPayloadVol = launchPayloadVol;
   LaunchPayloadMass get returnPayloadMass => _returnPayloadMass;
-  set returnPayloadMass(LaunchPayloadMass returnPayloadMass) =>
-      _returnPayloadMass = returnPayloadMass;
+  set returnPayloadMass(LaunchPayloadMass returnPayloadMass) => _returnPayloadMass = returnPayloadMass;
   LaunchPayloadVol get returnPayloadVol => _returnPayloadVol;
-  set returnPayloadVol(LaunchPayloadVol returnPayloadVol) =>
-      _returnPayloadVol = returnPayloadVol;
+  set returnPayloadVol(LaunchPayloadVol returnPayloadVol) => _returnPayloadVol = returnPayloadVol;
   PressurizedCapsule get pressurizedCapsule => _pressurizedCapsule;
-  set pressurizedCapsule(PressurizedCapsule pressurizedCapsule) =>
-      _pressurizedCapsule = pressurizedCapsule;
+  set pressurizedCapsule(PressurizedCapsule pressurizedCapsule) => _pressurizedCapsule = pressurizedCapsule;
   Trunk get trunk => _trunk;
   set trunk(Trunk trunk) => _trunk = trunk;
   HeightWTrunk get heightWTrunk => _heightWTrunk;
@@ -118,11 +113,9 @@ class Dragon {
   num get crewCapacity => _crewCapacity;
   set crewCapacity(num crewCapacity) => _crewCapacity = crewCapacity;
   num get sidewallAngleDeg => _sidewallAngleDeg;
-  set sidewallAngleDeg(num sidewallAngleDeg) =>
-      _sidewallAngleDeg = sidewallAngleDeg;
+  set sidewallAngleDeg(num sidewallAngleDeg) => _sidewallAngleDeg = sidewallAngleDeg;
   num get orbitDurationYr => _orbitDurationYr;
-  set orbitDurationYr(num orbitDurationYr) =>
-      _orbitDurationYr = orbitDurationYr;
+  set orbitDurationYr(num orbitDurationYr) => _orbitDurationYr = orbitDurationYr;
   num get dryMassKg => _dryMassKg;
   set dryMassKg(num dryMassKg) => _dryMassKg = dryMassKg;
   num get dryMassLb => _dryMassLb;
@@ -161,9 +154,7 @@ class Dragon {
         ? PressurizedCapsule.fromJson(json['pressurized_capsule'])
         : throw ArgumentError('pressurized_capsule cannot be null');
 
-    _trunk = (json['trunk'] != null)
-        ? Trunk.fromJson(json['trunk'])
-        : throw ArgumentError('trunk cannot be null');
+    _trunk = (json['trunk'] != null) ? Trunk.fromJson(json['trunk']) : throw ArgumentError('trunk cannot be null');
 
     _heightWTrunk = (json['height_w_trunk'] != null)
         ? HeightWTrunk.fromJson(json['height_w_trunk'])
@@ -184,9 +175,7 @@ class Dragon {
     _dryMassKg = json['dry_mass_kg'];
     _dryMassLb = json['dry_mass_lb'];
     if (json['thrusters'] != null) {
-      _thrusters = List<Thrusters>.from(
-        json['thrusters'].map((x) => Thrusters.fromJson(x))
-      );
+      _thrusters = List<Thrusters>.from(json['thrusters'].map((x) => Thrusters.fromJson(x)));
     } else {
       _thrusters = [];
     }
@@ -198,15 +187,15 @@ class Dragon {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['heat_shield'] = this._heatShield.toJson();
-      data['launch_payload_mass'] = this._launchPayloadMass.toJson();
-      data['launch_payload_vol'] = this._launchPayloadVol.toJson();
-      data['return_payload_mass'] = this._returnPayloadMass.toJson();
-      data['return_payload_vol'] = this._returnPayloadVol.toJson();
-      data['pressurized_capsule'] = this._pressurizedCapsule.toJson();
-      data['trunk'] = this._trunk.toJson();
-      data['height_w_trunk'] = this._heightWTrunk.toJson();
-      data['diameter'] = this._diameter.toJson();
-      data['first_flight'] = this._firstFlight;
+    data['launch_payload_mass'] = this._launchPayloadMass.toJson();
+    data['launch_payload_vol'] = this._launchPayloadVol.toJson();
+    data['return_payload_mass'] = this._returnPayloadMass.toJson();
+    data['return_payload_vol'] = this._returnPayloadVol.toJson();
+    data['pressurized_capsule'] = this._pressurizedCapsule.toJson();
+    data['trunk'] = this._trunk.toJson();
+    data['height_w_trunk'] = this._heightWTrunk.toJson();
+    data['diameter'] = this._diameter.toJson();
+    data['first_flight'] = this._firstFlight;
     data['flickr_images'] = this._flickrImages;
     data['name'] = this._name;
     data['type'] = this._type;
@@ -217,7 +206,7 @@ class Dragon {
     data['dry_mass_kg'] = this._dryMassKg;
     data['dry_mass_lb'] = this._dryMassLb;
     data['thrusters'] = this._thrusters.map((v) => v.toJson()).toList();
-      data['wikipedia'] = this._wikipedia;
+    data['wikipedia'] = this._wikipedia;
     data['description'] = this._description;
     data['id'] = this._id;
     return data;

@@ -63,9 +63,9 @@ class Links {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['patch'] = this._patch.toJson();
-      data['reddit'] = this._reddit.toJson();
-      data['flickr'] = this._flickr.toJson();
-      data['presskit'] = this._presskit;
+    data['reddit'] = this._reddit.toJson();
+    data['flickr'] = this._flickr.toJson();
+    data['presskit'] = this._presskit;
     data['webcast'] = this._webcast;
     data['youtube_id'] = this._youtubeId;
     data['article'] = this._article;

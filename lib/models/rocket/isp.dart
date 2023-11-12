@@ -4,7 +4,7 @@ class Isp {
 
   Isp({num? seaLevel, num? vacuum}) {
     _seaLevel = seaLevel ?? 0; // Default to 0 if seaLevel is null
-    _vacuum = vacuum ?? 0;     // Default to 0 if vacuum is null
+    _vacuum = vacuum ?? 0; // Default to 0 if vacuum is null
   }
 
   num get seaLevel => _seaLevel;
@@ -14,7 +14,7 @@ class Isp {
 
   Isp.fromJson(Map<String, dynamic> json) {
     _seaLevel = json['sea_level'] ?? 0; // Default to 0 if seaLevel is missing
-    _vacuum = json['vacuum'] ?? 0;     // Default to 0 if vacuum is missing
+    _vacuum = json['vacuum'] ?? 0; // Default to 0 if vacuum is missing
   }
 
   Map<String, dynamic> toJson() {

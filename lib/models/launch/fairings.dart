@@ -10,10 +10,10 @@ class Fairings {
     required bool recoveryAttempt,
     required bool recovered,
     required List<String> shipsIds,
-  }) : _reused = reused,
-       _recoveryAttempt = recoveryAttempt,
-       _recovered = recovered,
-       _shipsIds = shipsIds;
+  })  : _reused = reused,
+        _recoveryAttempt = recoveryAttempt,
+        _recovered = recovered,
+        _shipsIds = shipsIds;
 
   bool get reused => _reused;
   set reused(bool reused) => _reused = reused;

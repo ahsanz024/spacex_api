@@ -7,8 +7,8 @@ class Flickr {
   Flickr({
     required List<String> small,
     required List<String> original,
-  }) : _small = small,
-       _original = original;
+  })  : _small = small,
+        _original = original;
 
   List<String> get small => _small;
   set small(List<String> small) => _small = small;

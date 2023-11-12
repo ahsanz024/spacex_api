@@ -61,11 +61,9 @@ class Landpad {
   num get longitude => _longitude;
   set longitude(num longitude) => _longitude = longitude;
   num get landingAttempts => _landingAttempts;
-  set landingAttempts(num landingAttempts) =>
-      _landingAttempts = landingAttempts;
+  set landingAttempts(num landingAttempts) => _landingAttempts = landingAttempts;
   num get landingSuccesses => _landingSuccesses;
-  set landingSuccesses(num landingSuccesses) =>
-      _landingSuccesses = landingSuccesses;
+  set landingSuccesses(num landingSuccesses) => _landingSuccesses = landingSuccesses;
   String get wikipedia => _wikipedia;
   set wikipedia(String wikipedia) => _wikipedia = wikipedia;
   String get details => _details;

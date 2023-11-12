@@ -66,9 +66,8 @@ class Rocket {
       secondStage: SecondStage.fromJson(json['second_stage']),
       engines: Engines.fromJson(json['engines']),
       landingLegs: LandingLegs.fromJson(json['landing_legs']),
-      payloadWeights: (json['payload_weights'] as List)
-          .map((payloadWeight) => PayloadWeights.fromJson(payloadWeight))
-          .toList(),
+      payloadWeights:
+          (json['payload_weights'] as List).map((payloadWeight) => PayloadWeights.fromJson(payloadWeight)).toList(),
       flickrImages: (json['flickr_images'] as List).cast<String>(),
       name: json['name'],
       type: json['type'],

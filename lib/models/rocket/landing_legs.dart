@@ -12,7 +12,7 @@ class LandingLegs {
 
   num get number => _number;
   set number(num number) => _number = number;
-  
+
   String get material => _material;
   set material(String material) => _material = material;
 

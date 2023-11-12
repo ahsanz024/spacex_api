@@ -3,10 +3,10 @@ class Headquarters {
   String _city = '';
   String _state = '';
 
-  Headquarters({required String address, required String city, required String state}) :
-    _address = address,
-    _city = city,
-    _state = state;
+  Headquarters({required String address, required String city, required String state})
+      : _address = address,
+        _city = city,
+        _state = state;
 
   String get address => _address;
   set address(String address) => _address = address;

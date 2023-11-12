@@ -4,7 +4,7 @@ class Height {
 
   Height({num? meters, num? feet}) {
     _meters = meters ?? 0; // Default to 0 if meters is null
-    _feet = feet ?? 0;     // Default to 0 if feet is null
+    _feet = feet ?? 0; // Default to 0 if feet is null
   }
 
   num get meters => _meters;
@@ -14,7 +14,7 @@ class Height {
 
   Height.fromJson(Map<String, dynamic> json) {
     _meters = json['meters'] ?? 0; // Default to 0 if meters is missing
-    _feet = json['feet'] ?? 0;     // Default to 0 if feet is missing
+    _feet = json['feet'] ?? 0; // Default to 0 if feet is missing
   }
 
   Map<String, dynamic> toJson() {

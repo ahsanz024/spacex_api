@@ -58,43 +58,41 @@ class Launch {
     required bool upcoming,
     required List<Cores> cores,
     required String id,
-  }) : _fairings = fairings,
-       _links = links,
-       _staticFireDateUtc = staticFireDateUtc,
-       _staticFireDateUnix = staticFireDateUnix,
-       _tbd = tbd,
-       _net = net,
-       _window = window,
-       _rocket = rocket,
-       _success = success,
-       _details = details,
-       _crew = crew,
-       _shipsIds = shipsIds,
-       _capsules = capsules,
-       _payloads = payloads,
-       _launchpad = launchpad,
-       _autoUpdate = autoUpdate,
-       _failures = failures,
-       _flightNumber = flightNumber,
-       _name = name,
-       _dateUtc = dateUtc,
-       _dateUnix = dateUnix,
-       _dateLocal = dateLocal,
-       _datePrecision = datePrecision,
-       _upcoming = upcoming,
-       _cores = cores,
-       _id = id;
+  })  : _fairings = fairings,
+        _links = links,
+        _staticFireDateUtc = staticFireDateUtc,
+        _staticFireDateUnix = staticFireDateUnix,
+        _tbd = tbd,
+        _net = net,
+        _window = window,
+        _rocket = rocket,
+        _success = success,
+        _details = details,
+        _crew = crew,
+        _shipsIds = shipsIds,
+        _capsules = capsules,
+        _payloads = payloads,
+        _launchpad = launchpad,
+        _autoUpdate = autoUpdate,
+        _failures = failures,
+        _flightNumber = flightNumber,
+        _name = name,
+        _dateUtc = dateUtc,
+        _dateUnix = dateUnix,
+        _dateLocal = dateLocal,
+        _datePrecision = datePrecision,
+        _upcoming = upcoming,
+        _cores = cores,
+        _id = id;
 
   Fairings get fairings => _fairings;
   set fairings(Fairings fairings) => _fairings = fairings;
   Links get links => _links;
   set links(Links links) => _links = links;
   String get staticFireDateUtc => _staticFireDateUtc;
-  set staticFireDateUtc(String staticFireDateUtc) =>
-      _staticFireDateUtc = staticFireDateUtc;
+  set staticFireDateUtc(String staticFireDateUtc) => _staticFireDateUtc = staticFireDateUtc;
   num get staticFireDateUnix => _staticFireDateUnix;
-  set staticFireDateUnix(num staticFireDateUnix) =>
-      _staticFireDateUnix = staticFireDateUnix;
+  set staticFireDateUnix(num staticFireDateUnix) => _staticFireDateUnix = staticFireDateUnix;
   bool get tbd => _tbd;
   set tbd(bool tbd) => _tbd = tbd;
   bool get net => _net;
@@ -157,7 +155,8 @@ class Launch {
     _payloads = json['payloads']?.cast<String>() ?? []; // Assuming empty list as default
     _launchpad = json['launchpad'] ?? ''; // Assuming empty string as default
     _autoUpdate = json['auto_update'] ?? false; // Assuming false as default
-    _failures = (json['failures'] as List?)?.map((v) => Failures.fromJson(v)).toList() ?? []; // Assuming empty list as default
+    _failures =
+        (json['failures'] as List?)?.map((v) => Failures.fromJson(v)).toList() ?? []; // Assuming empty list as default
     _flightNumber = json['flight_number'] ?? 0; // Assuming zero as default
     _name = json['name'] ?? ''; // Assuming empty string as default
     _dateUtc = json['date_utc'] ?? ''; // Assuming empty string as default
@@ -169,12 +168,11 @@ class Launch {
     _id = json['id'] ?? ''; // Assuming empty string as default
   }
 
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['fairings'] = this._fairings.toJson();
-      data['links'] = this._links.toJson();
-      data['static_fire_date_utc'] = this._staticFireDateUtc;
+    data['links'] = this._links.toJson();
+    data['static_fire_date_utc'] = this._staticFireDateUtc;
     data['static_fire_date_unix'] = this._staticFireDateUnix;
     data['tbd'] = this._tbd;
     data['net'] = this._net;
@@ -183,13 +181,13 @@ class Launch {
     data['success'] = this._success;
     data['details'] = this._details;
     data['crew'] = this._crew.map((v) => v).toList();
-      data['ships'] = this._shipsIds.map((v) => v).toList();
-      data['capsules'] = this._capsules.map((v) => v).toList();
-      data['payloads'] = this._payloads;
+    data['ships'] = this._shipsIds.map((v) => v).toList();
+    data['capsules'] = this._capsules.map((v) => v).toList();
+    data['payloads'] = this._payloads;
     data['launchpad'] = this._launchpad;
     data['auto_update'] = this._autoUpdate;
     data['failures'] = this._failures.map((v) => v.toJson()).toList();
-      data['flight_number'] = this._flightNumber;
+    data['flight_number'] = this._flightNumber;
     data['name'] = this._name;
     data['date_utc'] = this._dateUtc;
     data['date_unix'] = this._dateUnix;
@@ -197,7 +195,7 @@ class Launch {
     data['date_precision'] = this._datePrecision;
     data['upcoming'] = this._upcoming;
     data['cores'] = this._cores.map((v) => v.toJson()).toList();
-      data['id'] = this._id;
+    data['id'] = this._id;
     return data;
   }
 }

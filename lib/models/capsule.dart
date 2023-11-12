@@ -19,7 +19,7 @@ class Capsule {
     required String status,
     required String type,
     required String id,
-      }) {
+  }) {
     this._reuseCount = reuseCount;
     this._waterLandings = waterLandings;
     this._landLandings = landLandings;

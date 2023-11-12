@@ -3,8 +3,7 @@ import 'launch_payload_vol.dart';
 class PressurizedCapsule {
   LaunchPayloadVol _payloadVolume;
 
-  PressurizedCapsule({required LaunchPayloadVol payloadVolume})
-      : _payloadVolume = payloadVolume;
+  PressurizedCapsule({required LaunchPayloadVol payloadVolume}) : _payloadVolume = payloadVolume;
 
   LaunchPayloadVol get payloadVolume => _payloadVolume;
   set payloadVolume(LaunchPayloadVol payloadVolume) => _payloadVolume = payloadVolume;

@@ -1,9 +1,9 @@
 class Options {
   var select;
   var sort;
-  late num offset;    // marking as late if you intend to initialize them later
-  late num page;      // marking as late if you intend to initialize them later
-  late num limit;     // marking as late if you intend to initialize them later
+  late num offset; // marking as late if you intend to initialize them later
+  late num page; // marking as late if you intend to initialize them later
+  late num limit; // marking as late if you intend to initialize them later
   late bool pagination; // marking as late if you intend to initialize them later
   var populate;
 
@@ -16,10 +16,10 @@ class Options {
     num? limit,
     bool? pagination,
     this.populate,
-  }) : offset = offset ?? 0, // Providing default values if none were passed
-       page = page ?? 0,
-       limit = limit ?? 10, // For example, default limit of 10
-       pagination = pagination ?? true; // Defaulting to true for pagination
+  })  : offset = offset ?? 0, // Providing default values if none were passed
+        page = page ?? 0,
+        limit = limit ?? 10, // For example, default limit of 10
+        pagination = pagination ?? true; // Defaulting to true for pagination
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
