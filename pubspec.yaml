@@ -1,6 +1,6 @@
 name: spacex_api
 description: Dart wrapper for unofficial SpaceX API v4, providing information about everything related to SpaceX and its public data.
-version: 0.0.5
+version: 0.0.6
 homepage: 'https://github.com/ahsanz024/spacex_api'
 
 environment:
