@@ -91,7 +91,8 @@ class Payload {
   }
 
   Dragon? get dragon => _dragon; // Change the return type to Dragon?
-  set dragon(Dragon? dragon) => _dragon = dragon; // Change the parameter type to Dragon?
+  set dragon(Dragon? dragon) =>
+      _dragon = dragon; // Change the parameter type to Dragon?
   String get name => _name;
   set name(String name) => _name = name;
   String get type => _type;
@@ -105,9 +106,11 @@ class Payload {
   List<num> get noradIds => _noradIds;
   set noradIds(List<num> noradIds) => _noradIds = noradIds;
   List<String> get nationalities => _nationalities;
-  set nationalities(List<String> nationalities) => _nationalities = nationalities;
+  set nationalities(List<String> nationalities) =>
+      _nationalities = nationalities;
   List<String> get manufacturers => _manufacturers;
-  set manufacturers(List<String> manufacturers) => _manufacturers = manufacturers;
+  set manufacturers(List<String> manufacturers) =>
+      _manufacturers = manufacturers;
   num get massKg => _massKg;
   set massKg(num massKg) => _massKg = massKg;
   num get massLbs => _massLbs;
@@ -115,13 +118,15 @@ class Payload {
   String get orbit => _orbit;
   set orbit(String orbit) => _orbit = orbit;
   String get referenceSystem => _referenceSystem;
-  set referenceSystem(String referenceSystem) => _referenceSystem = referenceSystem;
+  set referenceSystem(String referenceSystem) =>
+      _referenceSystem = referenceSystem;
   String get regime => _regime;
   set regime(String regime) => _regime = regime;
   num get longitude => _longitude;
   set longitude(num longitude) => _longitude = longitude;
   num get semiMajorAxisKm => _semiMajorAxisKm;
-  set semiMajorAxisKm(num semiMajorAxisKm) => _semiMajorAxisKm = semiMajorAxisKm;
+  set semiMajorAxisKm(num semiMajorAxisKm) =>
+      _semiMajorAxisKm = semiMajorAxisKm;
   num get eccentricity => _eccentricity;
   set eccentricity(num eccentricity) => _eccentricity = eccentricity;
   num get periapsisKm => _periapsisKm;
@@ -141,7 +146,8 @@ class Payload {
   num get raan => _raan;
   set raan(num raan) => _raan = raan;
   num get argOfPericenter => _argOfPericenter;
-  set argOfPericenter(num argOfPericenter) => _argOfPericenter = argOfPericenter;
+  set argOfPericenter(num argOfPericenter) =>
+      _argOfPericenter = argOfPericenter;
   num get meanAnomaly => _meanAnomaly;
   set meanAnomaly(num meanAnomaly) => _meanAnomaly = meanAnomaly;
   String get id => _id;
@@ -149,7 +155,8 @@ class Payload {
 
   factory Payload.fromJson(Map<String, dynamic> json) {
     return Payload(
-      dragon: json['dragon'] != null ? new Dragon.fromJson(json['dragon']) : null,
+      dragon:
+          json['dragon'] != null ? new Dragon.fromJson(json['dragon']) : null,
       name: json['name'] ?? '',
       type: json['type'] ?? '',
       reused: json['reused'] ?? false,

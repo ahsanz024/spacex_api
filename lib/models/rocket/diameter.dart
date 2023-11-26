@@ -13,7 +13,8 @@ class Diameter {
   set feet(num feet) => _feet = feet;
 
   Diameter.fromJson(Map<String, dynamic> json) {
-    _meters = json['meters'] ?? 0; // Initialize with default value if not provided
+    _meters =
+        json['meters'] ?? 0; // Initialize with default value if not provided
     _feet = json['feet'] ?? 0; // Initialize with default value if not provided
   }
 

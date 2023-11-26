@@ -4,7 +4,8 @@ class Options {
   late num offset; // marking as late if you intend to initialize them later
   late num page; // marking as late if you intend to initialize them later
   late num limit; // marking as late if you intend to initialize them later
-  late bool pagination; // marking as late if you intend to initialize them later
+  late bool
+      pagination; // marking as late if you intend to initialize them later
   var populate;
 
   // You can initialize the non-nullable variables with default values by adding a constructor

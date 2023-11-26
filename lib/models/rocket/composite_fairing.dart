@@ -5,8 +5,10 @@ class CompositeFairing {
   late Diameter _diameter;
 
   CompositeFairing({Diameter? height, Diameter? diameter}) {
-    _height = height ?? Diameter(); // Initialize with default values if not provided
-    _diameter = diameter ?? Diameter(); // Initialize with default values if not provided
+    _height =
+        height ?? Diameter(); // Initialize with default values if not provided
+    _diameter = diameter ??
+        Diameter(); // Initialize with default values if not provided
   }
 
   Diameter get height => _height;
@@ -15,8 +17,11 @@ class CompositeFairing {
   set diameter(Diameter diameter) => _diameter = diameter;
 
   CompositeFairing.fromJson(Map<String, dynamic> json) {
-    _height = json['height'] != null ? Diameter.fromJson(json['height']) : Diameter();
-    _diameter = json['diameter'] != null ? Diameter.fromJson(json['diameter']) : Diameter();
+    _height =
+        json['height'] != null ? Diameter.fromJson(json['height']) : Diameter();
+    _diameter = json['diameter'] != null
+        ? Diameter.fromJson(json['diameter'])
+        : Diameter();
   }
 
   Map<String, dynamic> toJson() {

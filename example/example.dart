@@ -42,7 +42,8 @@ Future<void> _fetchSingleCapsule(SpaceXApi api) async {
 Future<void> _fetchAllStarlink(SpaceXApi api) async {
   final response = await api.getAllStarlinks();
   if (response.statusCode == 200) {
-    List<Starlink> data = Utils.convertResponseToList<Starlink>(response, (e) => Starlink.fromJson(e));
+    List<Starlink> data = Utils.convertResponseToList<Starlink>(
+        response, (e) => Starlink.fromJson(e));
     print("Fetch Starlinks ${data.length}");
   }
 }
@@ -63,7 +64,10 @@ Future<void> _queryStarlinks(SpaceXApi api) async {
   if (response.statusCode == 200) {
     final jsonResp = Utils.parseResponseAsJson(response);
     PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);
-    List<Starlink> data = pagenatedResponse.docs.map((e) => Starlink.fromJson(e)).cast<Starlink>().toList();
+    List<Starlink> data = pagenatedResponse.docs
+        .map((e) => Starlink.fromJson(e))
+        .cast<Starlink>()
+        .toList();
     print("Qeury Starlinks ${data.length}");
   }
 
@@ -106,7 +110,8 @@ Future<void> _fetchRocket(SpaceXApi api) async {
   final response = await api.getAllRockets();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Rocket> data = json.map((e) => Rocket.fromJson(e)).cast<Rocket>().toList();
+    List<Rocket> data =
+        json.map((e) => Rocket.fromJson(e)).cast<Rocket>().toList();
     print("Fetch Rocket ${data[0].name}");
   }
 }
@@ -124,7 +129,8 @@ Future<void> _fetchPayloads(SpaceXApi api) async {
   final response = await api.getAllPayloads();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Payload> data = json.map((e) => Payload.fromJson(e)).cast<Payload>().toList();
+    List<Payload> data =
+        json.map((e) => Payload.fromJson(e)).cast<Payload>().toList();
     print("Fetch Payload ${data[0].name}");
   }
 }
@@ -133,7 +139,8 @@ Future<void> _fetchLaunches(SpaceXApi api) async {
   final response = await api.getAllLaunches();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Launch> data = json.map((e) => Launch.fromJson(e)).cast<Launch>().toList();
+    List<Launch> data =
+        json.map((e) => Launch.fromJson(e)).cast<Launch>().toList();
     print("Fetch Launch ${data[0].details}");
   }
 }
@@ -142,7 +149,8 @@ Future<void> _fetchLaunchPads(SpaceXApi api) async {
   final response = await api.getAllLaunchPads();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Launchpad> data = json.map((e) => Launchpad.fromJson(e)).cast<Launchpad>().toList();
+    List<Launchpad> data =
+        json.map((e) => Launchpad.fromJson(e)).cast<Launchpad>().toList();
     print("Fetch Launch ${data[0].details}");
   }
 }
@@ -151,7 +159,8 @@ Future<void> _fetchLandpads(SpaceXApi api) async {
   final response = await api.getAllLandpads();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Landpad> data = json.map((e) => Landpad.fromJson(e)).cast<Landpad>().toList();
+    List<Landpad> data =
+        json.map((e) => Landpad.fromJson(e)).cast<Landpad>().toList();
     print("Fetch Landpad ${data[0].fullName}");
   }
 }
@@ -160,7 +169,8 @@ Future<void> _fetchHistory(SpaceXApi api) async {
   final response = await api.getAllHistory();
   final json = _parseResponse(response);
   if (json != null) {
-    List<History> data = json.map((e) => History.fromJson(e)).cast<History>().toList();
+    List<History> data =
+        json.map((e) => History.fromJson(e)).cast<History>().toList();
     print("Fetch History ${data[0].title}");
   }
 }
@@ -169,7 +179,8 @@ Future<void> _fetchDragons(SpaceXApi api) async {
   final response = await api.getAllDragons();
   final json = _parseResponse(response);
   if (json != null) {
-    List<Dragon> data = json.map((e) => Dragon.fromJson(e)).cast<Dragon>().toList();
+    List<Dragon> data =
+        json.map((e) => Dragon.fromJson(e)).cast<Dragon>().toList();
     print("Fetch Dragon ${data[0].name}");
   }
 }

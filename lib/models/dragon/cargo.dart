@@ -10,7 +10,8 @@ class Cargo {
   num get solarArray => _solarArray;
   set solarArray(num solarArray) => _solarArray = solarArray;
   bool get unpressurizedCargo => _unpressurizedCargo;
-  set unpressurizedCargo(bool unpressurizedCargo) => _unpressurizedCargo = unpressurizedCargo;
+  set unpressurizedCargo(bool unpressurizedCargo) =>
+      _unpressurizedCargo = unpressurizedCargo;
 
   Cargo.fromJson(Map<String, dynamic> json) {
     _solarArray = json['solar_array'];

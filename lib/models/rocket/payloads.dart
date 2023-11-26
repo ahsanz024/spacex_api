@@ -10,7 +10,8 @@ class Payloads {
   }
 
   CompositeFairing get compositeFairing => _compositeFairing;
-  set compositeFairing(CompositeFairing compositeFairing) => _compositeFairing = compositeFairing;
+  set compositeFairing(CompositeFairing compositeFairing) =>
+      _compositeFairing = compositeFairing;
   String get option1 => _option1;
   set option1(String option1) => _option1 = option1;
 

@@ -50,9 +50,12 @@ class Links {
   set wikipedia(String wikipedia) => _wikipedia = wikipedia;
 
   Links.fromJson(Map<String, dynamic> json) {
-    _patch = Patch.fromJson(json['patch'] ?? {}); // Assuming Patch has a non-nullable default constructor
-    _reddit = Reddit.fromJson(json['reddit'] ?? {}); // Assuming Reddit has a non-nullable default constructor
-    _flickr = Flickr.fromJson(json['flickr'] ?? {}); // Assuming Flickr has a non-nullable default constructor
+    _patch = Patch.fromJson(json['patch'] ??
+        {}); // Assuming Patch has a non-nullable default constructor
+    _reddit = Reddit.fromJson(json['reddit'] ??
+        {}); // Assuming Reddit has a non-nullable default constructor
+    _flickr = Flickr.fromJson(json['flickr'] ??
+        {}); // Assuming Flickr has a non-nullable default constructor
     _presskit = json['presskit'] ?? ''; // Assuming empty string as default
     _webcast = json['webcast'] ?? ''; // Assuming empty string as default
     _youtubeId = json['youtube_id'] ?? ''; // Assuming empty string as default

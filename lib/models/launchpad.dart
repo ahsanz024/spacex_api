@@ -69,7 +69,8 @@ class Launchpad {
   set launchAttempts(num launchAttempts) => _launchAttempts = launchAttempts;
 
   num get launchSuccesses => _launchSuccesses;
-  set launchSuccesses(num launchSuccesses) => _launchSuccesses = launchSuccesses;
+  set launchSuccesses(num launchSuccesses) =>
+      _launchSuccesses = launchSuccesses;
 
   List<String> get rockets => _rockets;
   set rockets(List<String> rockets) => _rockets = rockets;

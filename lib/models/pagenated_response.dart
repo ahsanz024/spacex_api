@@ -45,7 +45,10 @@ class PagenatedResponse<T> {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (docs.isNotEmpty) {
       // Check if T has a toJson method, otherwise just set the value.
-      data['docs'] = docs.where((v) => v != null).map((v) => (v as dynamic).toJson()).toList();
+      data['docs'] = docs
+          .where((v) => v != null)
+          .map((v) => (v as dynamic).toJson())
+          .toList();
     } else {
       data['docs'] = [];
     }

@@ -13,8 +13,10 @@ class Patch {
   set large(String large) => _large = large;
 
   Patch.fromJson(Map<String, dynamic> json)
-      : _small = json['small']!, // Use the null assertion operator if you are sure the value won't be null
-        _large = json['large']!; // Use the null assertion operator if you are sure the value won't be null
+      : _small = json[
+            'small']!, // Use the null assertion operator if you are sure the value won't be null
+        _large = json[
+            'large']!; // Use the null assertion operator if you are sure the value won't be null
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

@@ -92,8 +92,9 @@ class Company {
     _headquarters = (json['headquarters'] != null
         ? Headquarters.fromJson(json['headquarters'])
         : null)!; // Assuming Headquarters has a default constructor
-    _links =
-        (json['links'] != null ? Links.fromJson(json['links']) : null)!; // Assuming Links has a default constructor
+    _links = (json['links'] != null
+        ? Links.fromJson(json['links'])
+        : null)!; // Assuming Links has a default constructor
     _name = json['name'];
     _founder = json['founder'];
     _founded = json['founded'];

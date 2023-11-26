@@ -4,7 +4,11 @@ class Links {
   String _twitter = '';
   String _elonTwitter = '';
 
-  Links({required String website, required String flickr, required String twitter, required String elonTwitter}) {
+  Links(
+      {required String website,
+      required String flickr,
+      required String twitter,
+      required String elonTwitter}) {
     this._website = website;
     this._flickr = flickr;
     this._twitter = twitter;

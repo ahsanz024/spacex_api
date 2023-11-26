@@ -18,7 +18,8 @@ class Fairings {
   bool get reused => _reused;
   set reused(bool reused) => _reused = reused;
   bool get recoveryAttempt => _recoveryAttempt;
-  set recoveryAttempt(bool recoveryAttempt) => _recoveryAttempt = recoveryAttempt;
+  set recoveryAttempt(bool recoveryAttempt) =>
+      _recoveryAttempt = recoveryAttempt;
   bool get recovered => _recovered;
   set recovered(bool recovered) => _recovered = recovered;
   List<String> get shipsIds => _shipsIds;
@@ -28,7 +29,8 @@ class Fairings {
       : _reused = json['reused'] ?? false, // Provide default value if null
         _recoveryAttempt = json['recovery_attempt'] ?? false,
         _recovered = json['recovered'] ?? false,
-        _shipsIds = List<String>.from(json['ships'] ?? []); // Use List.from to create a new list
+        _shipsIds = List<String>.from(
+            json['ships'] ?? []); // Use List.from to create a new list
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

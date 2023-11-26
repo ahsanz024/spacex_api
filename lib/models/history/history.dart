@@ -25,8 +25,10 @@ class History {
   factory History.fromJson(Map<String, dynamic> json) {
     if (json['links'] == null) throw ArgumentError('links cannot be null');
     if (json['title'] == null) throw ArgumentError('title cannot be null');
-    if (json['event_date_utc'] == null) throw ArgumentError('event_date_utc cannot be null');
-    if (json['event_date_unix'] == null) throw ArgumentError('event_date_unix cannot be null');
+    if (json['event_date_utc'] == null)
+      throw ArgumentError('event_date_utc cannot be null');
+    if (json['event_date_unix'] == null)
+      throw ArgumentError('event_date_unix cannot be null');
     if (json['details'] == null) throw ArgumentError('details cannot be null');
     if (json['id'] == null) throw ArgumentError('id cannot be null');
 

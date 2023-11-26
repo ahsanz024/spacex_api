@@ -90,9 +90,11 @@ class Launch {
   Links get links => _links;
   set links(Links links) => _links = links;
   String get staticFireDateUtc => _staticFireDateUtc;
-  set staticFireDateUtc(String staticFireDateUtc) => _staticFireDateUtc = staticFireDateUtc;
+  set staticFireDateUtc(String staticFireDateUtc) =>
+      _staticFireDateUtc = staticFireDateUtc;
   num get staticFireDateUnix => _staticFireDateUnix;
-  set staticFireDateUnix(num staticFireDateUnix) => _staticFireDateUnix = staticFireDateUnix;
+  set staticFireDateUnix(num staticFireDateUnix) =>
+      _staticFireDateUnix = staticFireDateUnix;
   bool get tbd => _tbd;
   set tbd(bool tbd) => _tbd = tbd;
   bool get net => _net;
@@ -139,32 +141,44 @@ class Launch {
   set id(String id) => _id = id;
 
   Launch.fromJson(Map<String, dynamic> json) {
-    _fairings = (json['fairings'] != null ? Fairings.fromJson(json['fairings']) : null)!;
+    _fairings = (json['fairings'] != null
+        ? Fairings.fromJson(json['fairings'])
+        : null)!;
     _links = (json['links'] != null ? Links.fromJson(json['links']) : null)!;
-    _staticFireDateUtc = json['static_fire_date_utc'] ?? ''; // Assuming empty string as default
-    _staticFireDateUnix = json['static_fire_date_unix'] ?? 0; // Assuming zero as default
+    _staticFireDateUtc =
+        json['static_fire_date_utc'] ?? ''; // Assuming empty string as default
+    _staticFireDateUnix =
+        json['static_fire_date_unix'] ?? 0; // Assuming zero as default
     _tbd = json['tbd'] ?? false; // Assuming false as default
     _net = json['net'] ?? false; // Assuming false as default
     _window = json['window'] ?? 0; // Assuming zero as default
     _rocket = json['rocket'] ?? ''; // Assuming empty string as default
     _success = json['success'] ?? false; // Assuming false as default
     _details = json['details'] ?? ''; // Assuming empty string as default
-    _crew = json['crew']?.cast<String>() ?? []; // Assuming empty list as default
-    _shipsIds = json['ships']?.cast<String>() ?? []; // Assuming empty list as default
-    _capsules = json['capsules']?.cast<String>() ?? []; // Assuming empty list as default
-    _payloads = json['payloads']?.cast<String>() ?? []; // Assuming empty list as default
+    _crew =
+        json['crew']?.cast<String>() ?? []; // Assuming empty list as default
+    _shipsIds =
+        json['ships']?.cast<String>() ?? []; // Assuming empty list as default
+    _capsules = json['capsules']?.cast<String>() ??
+        []; // Assuming empty list as default
+    _payloads = json['payloads']?.cast<String>() ??
+        []; // Assuming empty list as default
     _launchpad = json['launchpad'] ?? ''; // Assuming empty string as default
     _autoUpdate = json['auto_update'] ?? false; // Assuming false as default
-    _failures =
-        (json['failures'] as List?)?.map((v) => Failures.fromJson(v)).toList() ?? []; // Assuming empty list as default
+    _failures = (json['failures'] as List?)
+            ?.map((v) => Failures.fromJson(v))
+            .toList() ??
+        []; // Assuming empty list as default
     _flightNumber = json['flight_number'] ?? 0; // Assuming zero as default
     _name = json['name'] ?? ''; // Assuming empty string as default
     _dateUtc = json['date_utc'] ?? ''; // Assuming empty string as default
     _dateUnix = json['date_unix'] ?? 0; // Assuming zero as default
     _dateLocal = json['date_local'] ?? ''; // Assuming empty string as default
-    _datePrecision = json['date_precision'] ?? ''; // Assuming empty string as default
+    _datePrecision =
+        json['date_precision'] ?? ''; // Assuming empty string as default
     _upcoming = json['upcoming'] ?? false; // Assuming false as default
-    _cores = (json['cores'] as List?)?.map((v) => Cores.fromJson(v)).toList() ?? []; // Assuming empty list as default
+    _cores = (json['cores'] as List?)?.map((v) => Cores.fromJson(v)).toList() ??
+        []; // Assuming empty list as default
     _id = json['id'] ?? ''; // Assuming empty string as default
   }
 
