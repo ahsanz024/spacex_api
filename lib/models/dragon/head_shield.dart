@@ -4,13 +4,15 @@ class HeatShield {
   num _tempDegrees;
   String _devPartner;
 
-  HeatShield(
-      {String material, num sizeMeters, num tempDegrees, String devPartner}) {
-    this._material = material;
-    this._sizeMeters = sizeMeters;
-    this._tempDegrees = tempDegrees;
-    this._devPartner = devPartner;
-  }
+  HeatShield({
+    required String material,
+    required num sizeMeters,
+    required num tempDegrees,
+    required String devPartner,
+  })  : _material = material,
+        _sizeMeters = sizeMeters,
+        _tempDegrees = tempDegrees,
+        _devPartner = devPartner;
 
   String get material => _material;
   set material(String material) => _material = material;
@@ -21,12 +23,11 @@ class HeatShield {
   String get devPartner => _devPartner;
   set devPartner(String devPartner) => _devPartner = devPartner;
 
-  HeatShield.fromJson(Map<String, dynamic> json) {
-    _material = json['material'];
-    _sizeMeters = json['size_meters'];
-    _tempDegrees = json['temp_degrees'];
-    _devPartner = json['dev_partner'];
-  }
+  HeatShield.fromJson(Map<String, dynamic> json)
+      : _material = json['material'],
+        _sizeMeters = json['size_meters'],
+        _tempDegrees = json['temp_degrees'],
+        _devPartner = json['dev_partner'];
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

@@ -1,10 +1,10 @@
 class Isp {
-  num _seaLevel;
-  num _vacuum;
+  late num _seaLevel;
+  late num _vacuum;
 
-  Isp({num seaLevel, num vacuum}) {
-    this._seaLevel = seaLevel;
-    this._vacuum = vacuum;
+  Isp({num? seaLevel, num? vacuum}) {
+    _seaLevel = seaLevel ?? 0; // Default to 0 if seaLevel is null
+    _vacuum = vacuum ?? 0; // Default to 0 if vacuum is null
   }
 
   num get seaLevel => _seaLevel;
@@ -13,14 +13,14 @@ class Isp {
   set vacuum(num vacuum) => _vacuum = vacuum;
 
   Isp.fromJson(Map<String, dynamic> json) {
-    _seaLevel = json['sea_level'];
-    _vacuum = json['vacuum'];
+    _seaLevel = json['sea_level'] ?? 0; // Default to 0 if seaLevel is missing
+    _vacuum = json['vacuum'] ?? 0; // Default to 0 if vacuum is missing
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['sea_level'] = this._seaLevel;
-    data['vacuum'] = this._vacuum;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['sea_level'] = _seaLevel;
+    data['vacuum'] = _vacuum;
     return data;
   }
 }

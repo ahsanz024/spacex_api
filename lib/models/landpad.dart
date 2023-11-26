@@ -1,49 +1,49 @@
 class Landpad {
-  String _name;
-  String _fullName;
-  String _type;
-  String _locality;
-  String _region;
-  num _latitude;
-  num _longitude;
-  num _landingAttempts;
-  num _landingSuccesses;
-  String _wikipedia;
-  String _details;
-  List<String> _launches;
-  String _status;
-  String _id;
+  late String _name;
+  late String _fullName;
+  late String _type;
+  late String _locality;
+  late String _region;
+  late num _latitude;
+  late num _longitude;
+  late num _landingAttempts;
+  late num _landingSuccesses;
+  late String _wikipedia;
+  late String _details;
+  late List<String> _launches;
+  late String _status;
+  late String _id;
 
   Landpad({
-    String name,
-    String fullName,
-    String type,
-    String locality,
-    String region,
-    num latitude,
-    num longitude,
-    num landingAttempts,
-    num landingSuccesses,
-    String wikipedia,
-    String details,
-    List<String> launches,
-    String status,
-    String id,
+    required String name,
+    required String fullName,
+    required String type,
+    required String locality,
+    required String region,
+    required num latitude,
+    required num longitude,
+    required num landingAttempts,
+    required num landingSuccesses,
+    required String wikipedia,
+    required String details,
+    required List<String> launches,
+    required String status,
+    required String id,
   }) {
-    this._name = name;
-    this._fullName = fullName;
-    this._type = type;
-    this._locality = locality;
-    this._region = region;
-    this._latitude = latitude;
-    this._longitude = longitude;
-    this._landingAttempts = landingAttempts;
-    this._landingSuccesses = landingSuccesses;
-    this._wikipedia = wikipedia;
-    this._details = details;
-    this._launches = launches;
-    this._status = status;
-    this._id = id;
+    _name = name;
+    _fullName = fullName;
+    _type = type;
+    _locality = locality;
+    _region = region;
+    _latitude = latitude;
+    _longitude = longitude;
+    _landingAttempts = landingAttempts;
+    _landingSuccesses = landingSuccesses;
+    _wikipedia = wikipedia;
+    _details = details;
+    _launches = launches;
+    _status = status;
+    _id = id;
   }
 
   String get name => _name;
@@ -89,7 +89,7 @@ class Landpad {
     _landingSuccesses = json['landing_successes'];
     _wikipedia = json['wikipedia'];
     _details = json['details'];
-    _launches = json['launches']?.cast<String>();
+    _launches = List<String>.from(json['launches'] ?? []);
     _status = json['status'];
     _id = json['id'];
   }

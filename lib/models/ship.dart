@@ -1,54 +1,55 @@
 class Ship {
-  String _legacyId;
-  String _model;
-  String _type;
-  List<String> _roles;
-  num _imo;
-  num _mmsi;
-  num _abs;
-  num _shipClass;
-  num _massKg;
-  num _massLbs;
-  num _yearBuilt;
-  String _homePort;
-  String _status;
-  num _speedKn;
-  num _courseDeg;
-  num _latitude;
-  num _longitude;
-  String _lastAisUpdate;
-  String _link;
-  String _image;
-  List<String> _launches;
-  String _name;
-  bool _active;
-  String _id;
+  late String _legacyId;
+  late String _model;
+  late String _type;
+  late List<String> _roles;
+  late num _imo;
+  late num _mmsi;
+  late num _abs;
+  late num _shipClass;
+  late num _massKg;
+  late num _massLbs;
+  late num _yearBuilt;
+  late String _homePort;
+  late String _status;
+  late num _speedKn;
+  late num _courseDeg;
+  late num _latitude;
+  late num _longitude;
+  late String _lastAisUpdate;
+  late String _link;
+  late String _image;
+  late List<String> _launches;
+  late String _name;
+  late bool _active;
+  late String _id;
 
-  Ship(
-      {String legacyId,
-      String model,
-      String type,
-      List<String> roles,
-      num imo,
-      num mmsi,
-      num abs,
-      num shipClass,
-      num massKg,
-      num massLbs,
-      num yearBuilt,
-      String homePort,
-      String status,
-      num speedKn,
-      num courseDeg,
-      num latitude,
-      num longitude,
-      String lastAisUpdate,
-      String link,
-      String image,
-      List<String> launches,
-      String name,
-      bool active,
-      String id}) {
+  Ship({
+    required String legacyId,
+    required String model,
+    required String type,
+    required List<String> roles,
+    required num imo,
+    required num mmsi,
+    required num abs,
+    required num shipClass,
+    required num massKg,
+    required num massLbs,
+    required num yearBuilt,
+    required String homePort,
+    required String status,
+    required num speedKn,
+    required num courseDeg,
+    required num latitude,
+    required num longitude,
+    required String lastAisUpdate,
+    required String link,
+    required String image,
+    required List<String> launches,
+    required String name,
+    required bool active,
+    required String id,
+  }) {
     this._legacyId = legacyId;
     this._model = model;
     this._type = type;
@@ -128,7 +129,7 @@ class Ship {
     _legacyId = json['legacy_id'];
     _model = json['model'];
     _type = json['type'];
-    _roles = json['roles']?.cast<String>();
+    _roles = json['roles']?.cast<String>() ?? [];
     _imo = json['imo'];
     _mmsi = json['mmsi'];
     _abs = json['abs'];
@@ -145,38 +146,39 @@ class Ship {
     _lastAisUpdate = json['last_ais_update'];
     _link = json['link'];
     _image = json['image'];
-    _launches = json['launches']?.cast<String>();
+    _launches = json['launches']?.cast<String>() ?? [];
     _name = json['name'];
     _active = json['active'];
     _id = json['id'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['legacy_id'] = this._legacyId;
-    data['model'] = this._model;
-    data['type'] = this._type;
-    data['roles'] = this._roles;
-    data['imo'] = this._imo;
-    data['mmsi'] = this._mmsi;
-    data['abs'] = this._abs;
-    data['class'] = this._shipClass;
-    data['mass_kg'] = this._massKg;
-    data['mass_lbs'] = this._massLbs;
-    data['year_built'] = this._yearBuilt;
-    data['home_port'] = this._homePort;
-    data['status'] = this._status;
-    data['speed_kn'] = this._speedKn;
-    data['course_deg'] = this._courseDeg;
-    data['latitude'] = this._latitude;
-    data['longitude'] = this._longitude;
-    data['last_ais_update'] = this._lastAisUpdate;
-    data['link'] = this._link;
-    data['image'] = this._image;
-    data['launches'] = this._launches;
-    data['name'] = this._name;
-    data['active'] = this._active;
-    data['id'] = this._id;
+    final Map<String, dynamic> data = {
+      'legacy_id': _legacyId,
+      'model': _model,
+      'type': _type,
+      'roles': _roles,
+      'imo': _imo,
+      'mmsi': _mmsi,
+      'abs': _abs,
+      'class': _shipClass,
+      'mass_kg': _massKg,
+      'mass_lbs': _massLbs,
+      'year_built': _yearBuilt,
+      'home_port': _homePort,
+      'status': _status,
+      'speed_kn': _speedKn,
+      'course_deg': _courseDeg,
+      'latitude': _latitude,
+      'longitude': _longitude,
+      'last_ais_update': _lastAisUpdate,
+      'link': _link,
+      'image': _image,
+      'launches': _launches,
+      'name': _name,
+      'active': _active,
+      'id': _id,
+    };
     return data;
   }
 }

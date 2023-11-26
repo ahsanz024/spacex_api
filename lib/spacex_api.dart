@@ -14,14 +14,14 @@ class SpaceXApi {
   }
 
   Future<Response> getCapsuleById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.capsules, id: id);
   }
 
   Future<Response> queryCapsules({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.capsules,
@@ -41,14 +41,14 @@ class SpaceXApi {
   }
 
   Future<Response> getCrewById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.crew, id: id);
   }
 
   Future<Response> queryCrews({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.crew,
@@ -63,14 +63,14 @@ class SpaceXApi {
   }
 
   Future<Response> getDragonById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.dragons, id: id);
   }
 
   Future<Response> queryDragons({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.dragons,
@@ -85,14 +85,14 @@ class SpaceXApi {
   }
 
   Future<Response> getHistoryById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.history, id: id);
   }
 
   Future<Response> queryHistory({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.history,
@@ -107,14 +107,14 @@ class SpaceXApi {
   }
 
   Future<Response> getLandpadById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.landpads, id: id);
   }
 
   Future<Response> queryLandpads({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.landpads,
@@ -129,14 +129,14 @@ class SpaceXApi {
   }
 
   Future<Response> getLaunchById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.launches, id: id);
   }
 
   Future<Response> queryLaunches({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.launches,
@@ -151,14 +151,14 @@ class SpaceXApi {
   }
 
   Future<Response> getLaunchPadById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.launchpads, id: id);
   }
 
   Future<Response> queryLaunchPad({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.launchpads,
@@ -173,14 +173,14 @@ class SpaceXApi {
   }
 
   Future<Response> getPayloadsById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.payloads, id: id);
   }
 
   Future<Response> queryPayloads({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.payloads,
@@ -195,14 +195,14 @@ class SpaceXApi {
   }
 
   Future<Response> getRocketById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.rockets, id: id);
   }
 
   Future<Response> queryRockets({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.rockets,
@@ -211,7 +211,7 @@ class SpaceXApi {
     );
   }
 
-  /// Roadser
+  /// Roadster
   Future<Response> getRoadster() {
     return _req.getData(endpoint: Endpoints.roadster);
   }
@@ -222,14 +222,14 @@ class SpaceXApi {
   }
 
   Future<Response> getShipsById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.ships, id: id);
   }
 
   Future<Response> queryShips({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.ships,
@@ -244,14 +244,14 @@ class SpaceXApi {
   }
 
   Future<Response> getStarlinkById({
-    String id,
+    required String id,
   }) {
     return _req.getData(endpoint: Endpoints.starlink, id: id);
   }
 
   Future<Response> queryStarlinks({
-    Object query,
-    Object headers = null,
+    required Map<String, dynamic> query,
+    Map<String, String>? headers,
   }) {
     return _req.getData(
       endpoint: Endpoints.starlink,

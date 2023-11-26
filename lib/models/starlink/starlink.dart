@@ -1,24 +1,25 @@
 import 'space_track.dart';
 
 class Starlink {
-  SpaceTrack _spaceTrack;
-  String _version;
-  String _launch;
-  num _longitude;
-  num _latitude;
-  num _heightKm;
-  num _velocityKms;
-  String _id;
+  late SpaceTrack _spaceTrack;
+  late String _version;
+  late String _launch;
+  late num _longitude;
+  late num _latitude;
+  late num _heightKm;
+  late num _velocityKms;
+  late String _id;
 
-  Starlink(
-      {SpaceTrack spaceTrack,
-      String version,
-      String launch,
-      num longitude,
-      num latitude,
-      num heightKm,
-      num velocityKms,
-      String id}) {
+  Starlink({
+    required SpaceTrack spaceTrack,
+    required String version,
+    required String launch,
+    required num longitude,
+    required num latitude,
+    required num heightKm,
+    required num velocityKms,
+    required String id,
+  }) {
     this._spaceTrack = spaceTrack;
     this._version = version;
     this._launch = launch;
@@ -48,8 +49,8 @@ class Starlink {
 
   Starlink.fromJson(Map<String, dynamic> json) {
     _spaceTrack = json['spaceTrack'] != null
-        ? new SpaceTrack.fromJson(json['spaceTrack'])
-        : null;
+        ? SpaceTrack.fromJson(json['spaceTrack'])
+        : SpaceTrack(); // You can provide a default SpaceTrack if null.
     _version = json['version'];
     _launch = json['launch'];
     _longitude = json['longitude'];
@@ -60,17 +61,15 @@ class Starlink {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._spaceTrack != null) {
-      data['spaceTrack'] = this._spaceTrack.toJson();
-    }
-    data['version'] = this._version;
-    data['launch'] = this._launch;
-    data['longitude'] = this._longitude;
-    data['latitude'] = this._latitude;
-    data['height_km'] = this._heightKm;
-    data['velocity_kms'] = this._velocityKms;
-    data['id'] = this._id;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['spaceTrack'] = _spaceTrack.toJson();
+    data['version'] = _version;
+    data['launch'] = _launch;
+    data['longitude'] = _longitude;
+    data['latitude'] = _latitude;
+    data['height_km'] = _heightKm;
+    data['velocity_kms'] = _velocityKms;
+    data['id'] = _id;
     return data;
   }
 }

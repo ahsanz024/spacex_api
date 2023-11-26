@@ -1,13 +1,13 @@
 class Headquarters {
-  String _address;
-  String _city;
-  String _state;
+  String _address = '';
+  String _city = '';
+  String _state = '';
 
-  Headquarters({String address, String city, String state}) {
-    this._address = address;
-    this._city = city;
-    this._state = state;
-  }
+  Headquarters(
+      {required String address, required String city, required String state})
+      : _address = address,
+        _city = city,
+        _state = state;
 
   String get address => _address;
   set address(String address) => _address = address;

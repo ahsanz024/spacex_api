@@ -1,8 +1,8 @@
 class Diameter {
-  num _meters;
-  num _feet;
+  num _meters = 0;
+  num _feet = 0;
 
-  Diameter({num meters, num feet}) {
+  Diameter({required meters, required feet}) {
     this._meters = meters;
     this._feet = feet;
   }

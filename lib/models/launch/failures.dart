@@ -1,12 +1,12 @@
 class Failures {
-  num _time;
-  num _altitude;
-  String _reason;
+  late num _time;
+  late num _altitude;
+  late String _reason;
 
-  Failures({num time, num altitude, String reason}) {
-    this._time = time;
-    this._altitude = altitude;
-    this._reason = reason;
+  Failures({required num time, required num altitude, required String reason}) {
+    _time = time;
+    _altitude = altitude;
+    _reason = reason;
   }
 
   num get time => _time;

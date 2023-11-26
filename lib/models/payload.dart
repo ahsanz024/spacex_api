@@ -1,97 +1,98 @@
 import 'dragon/dragon.dart';
 
 class Payload {
-  Dragon _dragon;
-  String _name;
-  String _type;
-  bool _reused;
-  String _launch;
-  List<String> _customers;
-  List<num> _noradIds;
-  List<String> _nationalities;
-  List<String> _manufacturers;
-  num _massKg;
-  num _massLbs;
-  String _orbit;
-  String _referenceSystem;
-  String _regime;
-  num _longitude;
-  num _semiMajorAxisKm;
-  num _eccentricity;
-  num _periapsisKm;
-  num _apoapsisKm;
-  num _inclinationDeg;
-  num _periodMin;
-  num _lifespanYears;
-  String _epoch;
-  num _meanMotion;
-  num _raan;
-  num _argOfPericenter;
-  num _meanAnomaly;
-  String _id;
+  late Dragon? _dragon;
+  late String _name;
+  late String _type;
+  late bool _reused;
+  late String _launch;
+  late List<String> _customers;
+  late List<num> _noradIds;
+  late List<String> _nationalities;
+  late List<String> _manufacturers;
+  late num _massKg;
+  late num _massLbs;
+  late String _orbit;
+  late String _referenceSystem;
+  late String _regime;
+  late num _longitude;
+  late num _semiMajorAxisKm;
+  late num _eccentricity;
+  late num _periapsisKm;
+  late num _apoapsisKm;
+  late num _inclinationDeg;
+  late num _periodMin;
+  late num? _lifespanYears;
+  late String? _epoch;
+  late num _meanMotion;
+  late num _raan;
+  late num _argOfPericenter;
+  late num _meanAnomaly;
+  late String _id;
 
   Payload({
-    Dragon dragon,
-    String name,
-    String type,
-    bool reused,
-    String launch,
-    List<String> customers,
-    List<num> noradIds,
-    List<String> nationalities,
-    List<String> manufacturers,
-    num massKg,
-    num massLbs,
-    String orbit,
-    String referenceSystem,
-    String regime,
-    num longitude,
-    num semiMajorAxisKm,
-    num eccentricity,
-    num periapsisKm,
-    num apoapsisKm,
-    num inclinationDeg,
-    num periodMin,
-    num lifespanYears,
-    String epoch,
-    num meanMotion,
-    num raan,
-    num argOfPericenter,
-    num meanAnomaly,
-    String id,
+    required Dragon? dragon,
+    required String name,
+    required String type,
+    required bool reused,
+    required String launch,
+    required List<String> customers,
+    required List<num> noradIds,
+    required List<String> nationalities,
+    required List<String> manufacturers,
+    required num massKg,
+    required num massLbs,
+    required String orbit,
+    required String referenceSystem,
+    required String regime,
+    required num longitude,
+    required num semiMajorAxisKm,
+    required num eccentricity,
+    required num periapsisKm,
+    required num apoapsisKm,
+    required num inclinationDeg,
+    required num periodMin,
+    num? lifespanYears,
+    String? epoch,
+    required num meanMotion,
+    required num raan,
+    required num argOfPericenter,
+    required num meanAnomaly,
+    required String id,
   }) {
-    this._dragon = dragon;
-    this._name = name;
-    this._type = type;
-    this._reused = reused;
-    this._launch = launch;
-    this._customers = customers;
-    this._noradIds = noradIds;
-    this._nationalities = nationalities;
-    this._manufacturers = manufacturers;
-    this._massKg = massKg;
-    this._massLbs = massLbs;
-    this._orbit = orbit;
-    this._referenceSystem = referenceSystem;
-    this._regime = regime;
-    this._longitude = longitude;
-    this._semiMajorAxisKm = semiMajorAxisKm;
-    this._eccentricity = eccentricity;
-    this._periapsisKm = periapsisKm;
-    this._apoapsisKm = apoapsisKm;
-    this._inclinationDeg = inclinationDeg;
-    this._periodMin = periodMin;
-    this._lifespanYears = lifespanYears;
-    this._epoch = epoch;
-    this._meanMotion = meanMotion;
-    this._raan = raan;
-    this._argOfPericenter = argOfPericenter;
-    this._meanAnomaly = meanAnomaly;
-    this._id = id;
+    _dragon = dragon;
+    _name = name;
+    _type = type;
+    _reused = reused;
+    _launch = launch;
+    _customers = customers;
+    _noradIds = noradIds;
+    _nationalities = nationalities;
+    _manufacturers = manufacturers;
+    _massKg = massKg;
+    _massLbs = massLbs;
+    _orbit = orbit;
+    _referenceSystem = referenceSystem;
+    _regime = regime;
+    _longitude = longitude;
+    _semiMajorAxisKm = semiMajorAxisKm;
+    _eccentricity = eccentricity;
+    _periapsisKm = periapsisKm;
+    _apoapsisKm = apoapsisKm;
+    _inclinationDeg = inclinationDeg;
+    _periodMin = periodMin;
+    _lifespanYears = lifespanYears;
+    _epoch = epoch;
+    _meanMotion = meanMotion;
+    _raan = raan;
+    _argOfPericenter = argOfPericenter;
+    _meanAnomaly = meanAnomaly;
+    _id = id;
   }
 
-  Dragon get dragon => _dragon;
-  set dragon(Dragon dragon) => _dragon = dragon;
+  Dragon? get dragon => _dragon; // Change the return type to Dragon?
+  set dragon(Dragon? dragon) =>
+      _dragon = dragon; // Change the parameter type to Dragon?
   String get name => _name;
   set name(String name) => _name = name;
   String get type => _type;
@@ -136,9 +137,9 @@ class Payload {
   set inclinationDeg(num inclinationDeg) => _inclinationDeg = inclinationDeg;
   num get periodMin => _periodMin;
   set periodMin(num periodMin) => _periodMin = periodMin;
-  num get lifespanYears => _lifespanYears;
+  num get lifespanYears => _lifespanYears ?? 0;
   set lifespanYears(num lifespanYears) => _lifespanYears = lifespanYears;
-  String get epoch => _epoch;
+  String get epoch => _epoch ?? '';
   set epoch(String epoch) => _epoch = epoch;
   num get meanMotion => _meanMotion;
   set meanMotion(num meanMotion) => _meanMotion = meanMotion;
@@ -152,77 +153,75 @@ class Payload {
   String get id => _id;
   set id(String id) => _id = id;
 
-  Payload.fromJson(Map<String, dynamic> json) {
-    _dragon =
-        json['dragon'] != null ? new Dragon.fromJson(json['dragon']) : null;
-    _name = json['name'];
-    _type = json['type'];
-    _reused = json['reused'];
-    _launch = json['launch'];
-    _customers = json['customers']?.cast<String>();
-    if (json['norad_ids'] != null) {
-      _noradIds = new List<num>();
-      json['norad_ids'].forEach((v) {
-        _noradIds.add(v);
-      });
-    }
-    _nationalities = json['nationalities']?.cast<String>();
-    _manufacturers = json['manufacturers']?.cast<String>();
-    _massKg = json['mass_kg'];
-    _massLbs = json['mass_lbs'];
-    _orbit = json['orbit'];
-    _referenceSystem = json['reference_system'];
-    _regime = json['regime'];
-    _longitude = json['longitude'];
-    _semiMajorAxisKm = json['semi_major_axis_km'];
-    _eccentricity = json['eccentricity'];
-    _periapsisKm = json['periapsis_km'];
-    _apoapsisKm = json['apoapsis_km'];
-    _inclinationDeg = json['inclination_deg'];
-    _periodMin = json['period_min'];
-    _lifespanYears = json['lifespan_years'];
-    _epoch = json['epoch'];
-    _meanMotion = json['mean_motion'];
-    _raan = json['raan'];
-    _argOfPericenter = json['arg_of_pericenter'];
-    _meanAnomaly = json['mean_anomaly'];
-    _id = json['id'];
+  factory Payload.fromJson(Map<String, dynamic> json) {
+    return Payload(
+      dragon:
+          json['dragon'] != null ? new Dragon.fromJson(json['dragon']) : null,
+      name: json['name'] ?? '',
+      type: json['type'] ?? '',
+      reused: json['reused'] ?? false,
+      launch: json['launch'] ?? '',
+      customers: List<String>.from(json['customers'] ?? []),
+      noradIds: List<num>.from(json['norad_ids'] ?? []),
+      // if (json['norad_ids'] != null) {
+      //   _noradIds = new List<num>();
+      //   json['norad_ids'].forEach((v) {
+      //     _noradIds.add(v);
+      //   });
+      // }
+      nationalities: List<String>.from(json['nationalities'] ?? []),
+      manufacturers: List<String>.from(json['manufacturers'] ?? []),
+      massKg: json['mass_kg'] ?? 0,
+      massLbs: json['mass_lbs'] ?? 0,
+      orbit: json['orbit'] ?? '',
+      referenceSystem: json['reference_system'] ?? '',
+      regime: json['regime'] ?? '',
+      longitude: json['longitude'] ?? 0,
+      semiMajorAxisKm: json['semi_major_axis_km'] ?? 0,
+      eccentricity: json['eccentricity'] ?? 0,
+      periapsisKm: json['periapsis_km'] ?? 0,
+      apoapsisKm: json['apoapsis_km'] ?? 0,
+      inclinationDeg: json['inclination_deg'] ?? 0,
+      periodMin: json['period_min'] ?? 0,
+      lifespanYears: json['lifespan_years'],
+      epoch: json['epoch'],
+      meanMotion: json['mean_motion'] ?? 0,
+      raan: json['raan'] ?? 0,
+      argOfPericenter: json['arg_of_pericenter'] ?? 0,
+      meanAnomaly: json['mean_anomaly'] ?? 0,
+      id: json['id'] ?? '',
+    );
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._dragon != null) {
-      data['dragon'] = this._dragon.toJson();
-    }
-    data['name'] = this._name;
-    data['type'] = this._type;
-    data['reused'] = this._reused;
-    data['launch'] = this._launch;
-    data['customers'] = this._customers;
-    if (this._noradIds != null) {
-      data['norad_ids'] = this._noradIds.map((v) => v).toList();
-    }
-    data['nationalities'] = this._nationalities;
-    data['manufacturers'] = this._manufacturers;
-    data['mass_kg'] = this._massKg;
-    data['mass_lbs'] = this._massLbs;
-    data['orbit'] = this._orbit;
-    data['reference_system'] = this._referenceSystem;
-    data['regime'] = this._regime;
-    data['longitude'] = this._longitude;
-    data['semi_major_axis_km'] = this._semiMajorAxisKm;
-    data['eccentricity'] = this._eccentricity;
-    data['periapsis_km'] = this._periapsisKm;
-    data['apoapsis_km'] = this._apoapsisKm;
-    data['inclination_deg'] = this._inclinationDeg;
-    data['period_min'] = this._periodMin;
-    data['lifespan_years'] = this._lifespanYears;
-    data['epoch'] = this._epoch;
-    data['mean_motion'] = this._meanMotion;
-    data['raan'] = this._raan;
-    data['arg_of_pericenter'] = this._argOfPericenter;
-    data['mean_anomaly'] = this._meanAnomaly;
-    data['id'] = this._id;
-    return data;
+    return {
+      'name': _name,
+      'type': _type,
+      'reused': _reused,
+      'launch': _launch,
+      'customers': _customers,
+      'norad_ids': _noradIds,
+      'nationalities': _nationalities,
+      'manufacturers': _manufacturers,
+      'mass_kg': _massKg,
+      'mass_lbs': _massLbs,
+      'orbit': _orbit,
+      'reference_system': _referenceSystem,
+      'regime': _regime,
+      'longitude': _longitude,
+      'semi_major_axis_km': _semiMajorAxisKm,
+      'eccentricity': _eccentricity,
+      'periapsis_km': _periapsisKm,
+      'apoapsis_km': _apoapsisKm,
+      'inclination_deg': _inclinationDeg,
+      'period_min': _periodMin,
+      'lifespan_years': _lifespanYears,
+      'epoch': _epoch,
+      'mean_motion': _meanMotion,
+      'raan': _raan,
+      'arg_of_pericenter': _argOfPericenter,
+      'mean_anomaly': _meanAnomaly,
+      'id': _id,
+    };
   }
 }

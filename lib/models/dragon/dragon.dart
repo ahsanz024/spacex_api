@@ -8,77 +8,78 @@ import 'thrusters.dart';
 import 'trunk.dart';
 
 class Dragon {
-  HeatShield _heatShield;
-  LaunchPayloadMass _launchPayloadMass;
-  LaunchPayloadVol _launchPayloadVol;
-  LaunchPayloadMass _returnPayloadMass;
-  LaunchPayloadVol _returnPayloadVol;
-  PressurizedCapsule _pressurizedCapsule;
-  Trunk _trunk;
-  HeightWTrunk _heightWTrunk;
-  Diameter _diameter;
-  String _firstFlight;
-  List _flickrImages;
-  String _name;
-  String _type;
-  bool _active;
-  num _crewCapacity;
-  num _sidewallAngleDeg;
-  num _orbitDurationYr;
-  num _dryMassKg;
-  num _dryMassLb;
-  List<Thrusters> _thrusters;
-  String _wikipedia;
-  String _description;
-  String _id;
+  late HeatShield _heatShield;
+  late LaunchPayloadMass _launchPayloadMass;
+  late LaunchPayloadVol _launchPayloadVol;
+  late LaunchPayloadMass _returnPayloadMass;
+  late LaunchPayloadVol _returnPayloadVol;
+  late PressurizedCapsule _pressurizedCapsule;
+  late Trunk _trunk;
+  late HeightWTrunk _heightWTrunk;
+  late Diameter _diameter;
+  late String _firstFlight;
+  late List<String> _flickrImages;
+  late String _name;
+  late String _type;
+  late bool _active;
+  late num _crewCapacity;
+  late num _sidewallAngleDeg;
+  late num _orbitDurationYr;
+  late num _dryMassKg;
+  late num _dryMassLb;
+  late List<Thrusters> _thrusters;
+  late String _wikipedia;
+  late String _description;
+  late String _id;
 
-  Dragon(
-      {HeatShield heatShield,
-      LaunchPayloadMass launchPayloadMass,
-      LaunchPayloadVol launchPayloadVol,
-      LaunchPayloadMass returnPayloadMass,
-      LaunchPayloadVol returnPayloadVol,
-      PressurizedCapsule pressurizedCapsule,
-      Trunk trunk,
-      HeightWTrunk heightWTrunk,
-      Diameter diameter,
-      String firstFlight,
-      List<String> flickrImages,
-      String name,
-      String type,
-      bool active,
-      num crewCapacity,
-      num sidewallAngleDeg,
-      num orbitDurationYr,
-      num dryMassKg,
-      num dryMassLb,
-      List<Thrusters> thrusters,
-      String wikipedia,
-      String description,
-      String id}) {
-    this._heatShield = heatShield;
-    this._launchPayloadMass = launchPayloadMass;
-    this._launchPayloadVol = launchPayloadVol;
-    this._returnPayloadMass = returnPayloadMass;
-    this._returnPayloadVol = returnPayloadVol;
-    this._pressurizedCapsule = pressurizedCapsule;
-    this._trunk = trunk;
-    this._heightWTrunk = heightWTrunk;
-    this._diameter = diameter;
-    this._firstFlight = firstFlight;
-    this._flickrImages = flickrImages;
-    this._name = name;
-    this._type = type;
-    this._active = active;
-    this._crewCapacity = crewCapacity;
-    this._sidewallAngleDeg = sidewallAngleDeg;
-    this._orbitDurationYr = orbitDurationYr;
-    this._dryMassKg = dryMassKg;
-    this._dryMassLb = dryMassLb;
-    this._thrusters = thrusters;
-    this._wikipedia = wikipedia;
-    this._description = description;
-    this._id = id;
+  Dragon({
+    required HeatShield heatShield,
+    required LaunchPayloadMass launchPayloadMass,
+    required LaunchPayloadVol launchPayloadVol,
+    required LaunchPayloadMass returnPayloadMass,
+    required LaunchPayloadVol returnPayloadVol,
+    required PressurizedCapsule pressurizedCapsule,
+    required Trunk trunk,
+    required HeightWTrunk heightWTrunk,
+    required Diameter diameter,
+    required String firstFlight,
+    required List<String> flickrImages,
+    required String name,
+    required String type,
+    required bool active,
+    required num crewCapacity,
+    required num sidewallAngleDeg,
+    required num orbitDurationYr,
+    required num dryMassKg,
+    required num dryMassLb,
+    required List<Thrusters> thrusters,
+    required String wikipedia,
+    required String description,
+    required String id,
+  }) {
+    _heatShield = heatShield;
+    _launchPayloadMass = launchPayloadMass;
+    _launchPayloadVol = launchPayloadVol;
+    _returnPayloadMass = returnPayloadMass;
+    _returnPayloadVol = returnPayloadVol;
+    _pressurizedCapsule = pressurizedCapsule;
+    _trunk = trunk;
+    _heightWTrunk = heightWTrunk;
+    _diameter = diameter;
+    _firstFlight = firstFlight;
+    _flickrImages = flickrImages;
+    _name = name;
+    _type = type;
+    _active = active;
+    _crewCapacity = crewCapacity;
+    _sidewallAngleDeg = sidewallAngleDeg;
+    _orbitDurationYr = orbitDurationYr;
+    _dryMassKg = dryMassKg;
+    _dryMassLb = dryMassLb;
+    _thrusters = thrusters;
+    _wikipedia = wikipedia;
+    _description = description;
+    _id = id;
   }
 
   HeatShield get heatShield => _heatShield;
@@ -136,31 +137,42 @@ class Dragon {
   set id(String id) => _id = id;
 
   Dragon.fromJson(Map<String, dynamic> json) {
-    _heatShield = json['heat_shield'] != null
-        ? new HeatShield.fromJson(json['heat_shield'])
-        : null;
-    _launchPayloadMass = json['launch_payload_mass'] != null
-        ? new LaunchPayloadMass.fromJson(json['launch_payload_mass'])
-        : null;
-    _launchPayloadVol = json['launch_payload_vol'] != null
-        ? new LaunchPayloadVol.fromJson(json['launch_payload_vol'])
-        : null;
-    _returnPayloadMass = json['return_payload_mass'] != null
-        ? new LaunchPayloadMass.fromJson(json['return_payload_mass'])
-        : null;
-    _returnPayloadVol = json['return_payload_vol'] != null
-        ? new LaunchPayloadVol.fromJson(json['return_payload_vol'])
-        : null;
-    _pressurizedCapsule = json['pressurized_capsule'] != null
-        ? new PressurizedCapsule.fromJson(json['pressurized_capsule'])
-        : null;
-    _trunk = json['trunk'] != null ? new Trunk.fromJson(json['trunk']) : null;
-    _heightWTrunk = json['height_w_trunk'] != null
-        ? new HeightWTrunk.fromJson(json['height_w_trunk'])
-        : null;
-    _diameter = json['diameter'] != null
-        ? new Diameter.fromJson(json['diameter'])
-        : null;
+    _heatShield = (json['heat_shield'] != null)
+        ? HeatShield.fromJson(json['heat_shield'])
+        : throw ArgumentError('heat_shield cannot be null');
+
+    _launchPayloadMass = (json['launch_payload_mass'] != null)
+        ? LaunchPayloadMass.fromJson(json['launch_payload_mass'])
+        : throw ArgumentError('launch_payload_mass cannot be null');
+
+    _launchPayloadVol = (json['launch_payload_vol'] != null)
+        ? LaunchPayloadVol.fromJson(json['launch_payload_vol'])
+        : throw ArgumentError('launch_payload_vol cannot be null');
+
+    _returnPayloadMass = (json['return_payload_mass'] != null)
+        ? LaunchPayloadMass.fromJson(json['return_payload_mass'])
+        : throw ArgumentError('return_payload_mass cannot be null');
+
+    _returnPayloadVol = (json['return_payload_vol'] != null)
+        ? LaunchPayloadVol.fromJson(json['return_payload_vol'])
+        : throw ArgumentError('return_payload_vol cannot be null');
+
+    _pressurizedCapsule = (json['pressurized_capsule'] != null)
+        ? PressurizedCapsule.fromJson(json['pressurized_capsule'])
+        : throw ArgumentError('pressurized_capsule cannot be null');
+
+    _trunk = (json['trunk'] != null)
+        ? Trunk.fromJson(json['trunk'])
+        : throw ArgumentError('trunk cannot be null');
+
+    _heightWTrunk = (json['height_w_trunk'] != null)
+        ? HeightWTrunk.fromJson(json['height_w_trunk'])
+        : throw ArgumentError('height_w_trunk cannot be null');
+
+    _diameter = (json['diameter'] != null)
+        ? Diameter.fromJson(json['diameter'])
+        : throw ArgumentError('diameter cannot be null');
+
     _firstFlight = json['first_flight'];
     _flickrImages = json['flickr_images'];
     _name = json['name'];
@@ -172,10 +184,10 @@ class Dragon {
     _dryMassKg = json['dry_mass_kg'];
     _dryMassLb = json['dry_mass_lb'];
     if (json['thrusters'] != null) {
-      _thrusters = new List<Thrusters>();
-      json['thrusters'].forEach((v) {
-        _thrusters.add(new Thrusters.fromJson(v));
-      });
+      _thrusters = List<Thrusters>.from(
+          json['thrusters'].map((x) => Thrusters.fromJson(x)));
+    } else {
+      _thrusters = [];
     }
     _wikipedia = json['wikipedia'];
     _description = json['description'];
@@ -184,33 +196,15 @@ class Dragon {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._heatShield != null) {
-      data['heat_shield'] = this._heatShield.toJson();
-    }
-    if (this._launchPayloadMass != null) {
-      data['launch_payload_mass'] = this._launchPayloadMass.toJson();
-    }
-    if (this._launchPayloadVol != null) {
-      data['launch_payload_vol'] = this._launchPayloadVol.toJson();
-    }
-    if (this._returnPayloadMass != null) {
-      data['return_payload_mass'] = this._returnPayloadMass.toJson();
-    }
-    if (this._returnPayloadVol != null) {
-      data['return_payload_vol'] = this._returnPayloadVol.toJson();
-    }
-    if (this._pressurizedCapsule != null) {
-      data['pressurized_capsule'] = this._pressurizedCapsule.toJson();
-    }
-    if (this._trunk != null) {
-      data['trunk'] = this._trunk.toJson();
-    }
-    if (this._heightWTrunk != null) {
-      data['height_w_trunk'] = this._heightWTrunk.toJson();
-    }
-    if (this._diameter != null) {
-      data['diameter'] = this._diameter.toJson();
-    }
+    data['heat_shield'] = this._heatShield.toJson();
+    data['launch_payload_mass'] = this._launchPayloadMass.toJson();
+    data['launch_payload_vol'] = this._launchPayloadVol.toJson();
+    data['return_payload_mass'] = this._returnPayloadMass.toJson();
+    data['return_payload_vol'] = this._returnPayloadVol.toJson();
+    data['pressurized_capsule'] = this._pressurizedCapsule.toJson();
+    data['trunk'] = this._trunk.toJson();
+    data['height_w_trunk'] = this._heightWTrunk.toJson();
+    data['diameter'] = this._diameter.toJson();
     data['first_flight'] = this._firstFlight;
     data['flickr_images'] = this._flickrImages;
     data['name'] = this._name;
@@ -221,9 +215,7 @@ class Dragon {
     data['orbit_duration_yr'] = this._orbitDurationYr;
     data['dry_mass_kg'] = this._dryMassKg;
     data['dry_mass_lb'] = this._dryMassLb;
-    if (this._thrusters != null) {
-      data['thrusters'] = this._thrusters.map((v) => v.toJson()).toList();
-    }
+    data['thrusters'] = this._thrusters.map((v) => v.toJson()).toList();
     data['wikipedia'] = this._wikipedia;
     data['description'] = this._description;
     data['id'] = this._id;

@@ -1,12 +1,14 @@
 import 'diameter.dart';
 
 class CompositeFairing {
-  Diameter _height;
-  Diameter _diameter;
+  late Diameter _height;
+  late Diameter _diameter;
 
-  CompositeFairing({Diameter height, Diameter diameter}) {
-    this._height = height;
-    this._diameter = diameter;
+  CompositeFairing({Diameter? height, Diameter? diameter}) {
+    _height =
+        height ?? Diameter(); // Initialize with default values if not provided
+    _diameter = diameter ??
+        Diameter(); // Initialize with default values if not provided
   }
 
   Diameter get height => _height;
@@ -16,20 +18,16 @@ class CompositeFairing {
 
   CompositeFairing.fromJson(Map<String, dynamic> json) {
     _height =
-        json['height'] != null ? new Diameter.fromJson(json['height']) : null;
+        json['height'] != null ? Diameter.fromJson(json['height']) : Diameter();
     _diameter = json['diameter'] != null
-        ? new Diameter.fromJson(json['diameter'])
-        : null;
+        ? Diameter.fromJson(json['diameter'])
+        : Diameter();
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._height != null) {
-      data['height'] = this._height.toJson();
-    }
-    if (this._diameter != null) {
-      data['diameter'] = this._diameter.toJson();
-    }
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['height'] = _height.toJson();
+    data['diameter'] = _diameter.toJson();
     return data;
   }
 }

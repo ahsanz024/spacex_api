@@ -3,33 +3,33 @@ import 'patch.dart';
 import 'reddit.dart';
 
 class Links {
-  Patch _patch;
-  Reddit _reddit;
-  Flickr _flickr;
-  String _presskit;
-  String _webcast;
-  String _youtubeId;
-  String _article;
-  String _wikipedia;
+  late Patch _patch; // Marked as late
+  late Reddit _reddit; // Marked as late
+  late Flickr _flickr; // Marked as late
+  late String _presskit; // Marked as late
+  late String _webcast; // Marked as late
+  late String _youtubeId; // Marked as late
+  late String _article; // Marked as late
+  late String _wikipedia; // Marked as late
 
   Links({
-    Patch patch,
-    Reddit reddit,
-    Flickr flickr,
-    String presskit,
-    String webcast,
-    String youtubeId,
-    String article,
-    String wikipedia,
+    required Patch patch, // Made required
+    required Reddit reddit, // Made required
+    required Flickr flickr, // Made required
+    required String presskit, // Made required
+    required String webcast, // Made required
+    required String youtubeId, // Made required
+    required String article, // Made required
+    required String wikipedia, // Made required
   }) {
-    this._patch = patch;
-    this._reddit = reddit;
-    this._flickr = flickr;
-    this._presskit = presskit;
-    this._webcast = webcast;
-    this._youtubeId = youtubeId;
-    this._article = article;
-    this._wikipedia = wikipedia;
+    _patch = patch;
+    _reddit = reddit;
+    _flickr = flickr;
+    _presskit = presskit;
+    _webcast = webcast;
+    _youtubeId = youtubeId;
+    _article = article;
+    _wikipedia = wikipedia;
   }
 
   Patch get patch => _patch;
@@ -50,29 +50,24 @@ class Links {
   set wikipedia(String wikipedia) => _wikipedia = wikipedia;
 
   Links.fromJson(Map<String, dynamic> json) {
-    _patch = json['patch'] != null ? new Patch.fromJson(json['patch']) : null;
-    _reddit =
-        json['reddit'] != null ? new Reddit.fromJson(json['reddit']) : null;
-    _flickr =
-        json['flickr'] != null ? new Flickr.fromJson(json['flickr']) : null;
-    _presskit = json['presskit'];
-    _webcast = json['webcast'];
-    _youtubeId = json['youtube_id'];
-    _article = json['article'];
-    _wikipedia = json['wikipedia'];
+    _patch = Patch.fromJson(json['patch'] ??
+        {}); // Assuming Patch has a non-nullable default constructor
+    _reddit = Reddit.fromJson(json['reddit'] ??
+        {}); // Assuming Reddit has a non-nullable default constructor
+    _flickr = Flickr.fromJson(json['flickr'] ??
+        {}); // Assuming Flickr has a non-nullable default constructor
+    _presskit = json['presskit'] ?? ''; // Assuming empty string as default
+    _webcast = json['webcast'] ?? ''; // Assuming empty string as default
+    _youtubeId = json['youtube_id'] ?? ''; // Assuming empty string as default
+    _article = json['article'] ?? ''; // Assuming empty string as default
+    _wikipedia = json['wikipedia'] ?? ''; // Assuming empty string as default
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this._patch != null) {
-      data['patch'] = this._patch.toJson();
-    }
-    if (this._reddit != null) {
-      data['reddit'] = this._reddit.toJson();
-    }
-    if (this._flickr != null) {
-      data['flickr'] = this._flickr.toJson();
-    }
+    data['patch'] = this._patch.toJson();
+    data['reddit'] = this._reddit.toJson();
+    data['flickr'] = this._flickr.toJson();
     data['presskit'] = this._presskit;
     data['webcast'] = this._webcast;
     data['youtube_id'] = this._youtubeId;

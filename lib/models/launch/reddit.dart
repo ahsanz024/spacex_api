@@ -4,12 +4,16 @@ class Reddit {
   String _media;
   String _recovery;
 
-  Reddit({String campaign, String launch, String media, String recovery}) {
-    this._campaign = campaign;
-    this._launch = launch;
-    this._media = media;
-    this._recovery = recovery;
-  }
+  // Use the required keyword to indicate that the parameters must not be null
+  Reddit(
+      {required String campaign,
+      required String launch,
+      required String media,
+      required String recovery})
+      : _campaign = campaign, // Initialize using the initializer list
+        _launch = launch, // Initialize using the initializer list
+        _media = media, // Initialize using the initializer list
+        _recovery = recovery; // Initialize using the initializer list
 
   String get campaign => _campaign;
   set campaign(String campaign) => _campaign = campaign;
@@ -20,12 +24,15 @@ class Reddit {
   String get recovery => _recovery;
   set recovery(String recovery) => _recovery = recovery;
 
-  Reddit.fromJson(Map<String, dynamic> json) {
-    _campaign = json['campaign'];
-    _launch = json['launch'];
-    _media = json['media'];
-    _recovery = json['recovery'];
-  }
+  Reddit.fromJson(Map<String, dynamic> json)
+      : _campaign = json[
+            'campaign']!, // Use the null assertion operator if you are sure the value won't be null
+        _launch = json[
+            'launch']!, // Use the null assertion operator if you are sure the value won't be null
+        _media = json[
+            'media']!, // Use the null assertion operator if you are sure the value won't be null
+        _recovery = json[
+            'recovery']!; // Use the null assertion operator if you are sure the value won't be null
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

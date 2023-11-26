@@ -1,24 +1,25 @@
 class Capsule {
-  num _reuseCount;
-  num _waterLandings;
-  num _landLandings;
-  String _lastUpdate;
-  List<String> _launches;
-  String _serial;
-  String _status;
-  String _type;
-  String _id;
+  num _reuseCount = 0;
+  num _waterLandings = 0;
+  num _landLandings = 0;
+  List<String> _launches = [];
+  String _lastUpdate = '';
+  String _serial = '';
+  String _status = '';
+  String _type = '';
+  String _id = '';
 
-  Capsule(
-      {num reuseCount,
-      num waterLandings,
-      num landLandings,
-      String lastUpdate,
-      List<String> launches,
-      String serial,
-      String status,
-      String type,
-      String id}) {
+  Capsule({
+    required num reuseCount,
+    required num waterLandings,
+    required num landLandings,
+    required String lastUpdate,
+    required List<String> launches,
+    required String serial,
+    required String status,
+    required String type,
+    required String id,
+  }) {
     this._reuseCount = reuseCount;
     this._waterLandings = waterLandings;
     this._landLandings = landLandings;

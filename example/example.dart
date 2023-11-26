@@ -58,9 +58,9 @@ Future<void> _queryStarlinks(SpaceXApi api) async {
     "height_km",
     "longitude",
   ];
-  var queryJson = convert.jsonEncode(query.toJson());
+  // var queryJson = convert.jsonEncode(query.toJson());
 
-  final response = await api.queryStarlinks(query: queryJson);
+  final response = await api.queryStarlinks(query: query.toJson());
   if (response.statusCode == 200) {
     final jsonResp = Utils.parseResponseAsJson(response);
     PagenatedResponse pagenatedResponse = PagenatedResponse.fromJson(jsonResp);

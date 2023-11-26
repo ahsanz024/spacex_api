@@ -1,216 +1,49 @@
 class SpaceTrack {
-  String _cCSDSOMMVERS;
-  String _cOMMENT;
-  String _cREATIONDATE;
-  String _oRIGINATOR;
-  String _oBJECTNAME;
-  String _oBJECTID;
-  String _cENTERNAME;
-  String _rEFFRAME;
-  String _tIMESYSTEM;
-  String _mEANELEMENTTHEORY;
-  String _ePOCH;
-  num _mEANMOTION;
-  num _eCCENTRICITY;
-  num _iNCLINATION;
-  num _rAOFASCNODE;
-  num _aRGOFPERICENTER;
-  num _mEANANOMALY;
-  num _ePHEMERISTYPE;
-  String _cLASSIFICATIONTYPE;
-  num _nORADCATID;
-  num _eLEMENTSETNO;
-  num _rEVATEPOCH;
-  num _bSTAR;
-  num _mEANMOTIONDOT;
-  num _mEANMOTIONDDOT;
-  num _sEMIMAJORAXIS;
-  num _pERIOD;
-  num _aPOAPSIS;
-  num _pERIAPSIS;
-  String _oBJECTTYPE;
-  String _rCSSIZE;
-  String _cOUNTRYCODE;
-  String _lAUNCHDATE;
-  String _sITE;
-  String _dECAYDATE;
-  num _dECAYED;
-  num _fILE;
-  num _gPID;
-  String _tLELINE0;
-  String _tLELINE1;
-  String _tLELINE2;
+  late String _cCSDSOMMVERS;
+  late String _cOMMENT;
+  late String _cREATIONDATE;
+  late String _oRIGINATOR;
+  late String _oBJECTNAME;
+  late String _oBJECTID;
+  late String _cENTERNAME;
+  late String _rEFFRAME;
+  late String _tIMESYSTEM;
+  late String _mEANELEMENTTHEORY;
+  late String _ePOCH;
+  late num _mEANMOTION;
+  late num _eCCENTRICITY;
+  late num _iNCLINATION;
+  late num _rAOFASCNODE;
+  late num _aRGOFPERICENTER;
+  late num _mEANANOMALY;
+  late num _ePHEMERISTYPE;
+  late String _cLASSIFICATIONTYPE;
+  late num _nORADCATID;
+  late num _eLEMENTSETNO;
+  late num _rEVATEPOCH;
+  late num _bSTAR;
+  late num _mEANMOTIONDOT;
+  late num _mEANMOTIONDDOT;
+  late num _sEMIMAJORAXIS;
+  late num _pERIOD;
+  late num _aPOAPSIS;
+  late num _pERIAPSIS;
+  late String _oBJECTTYPE;
+  late String _rCSSIZE;
+  late String _cOUNTRYCODE;
+  late String _lAUNCHDATE;
+  late String _sITE;
+  late String _dECAYDATE;
+  late num _dECAYED;
+  late num _fILE;
+  late num _gPID;
+  late String _tLELINE0;
+  late String _tLELINE1;
+  late String _tLELINE2;
 
-  SpaceTrack(
-      {String cCSDSOMMVERS,
-      String cOMMENT,
-      String cREATIONDATE,
-      String oRIGINATOR,
-      String oBJECTNAME,
-      String oBJECTID,
-      String cENTERNAME,
-      String rEFFRAME,
-      String tIMESYSTEM,
-      String mEANELEMENTTHEORY,
-      String ePOCH,
-      num mEANMOTION,
-      num eCCENTRICITY,
-      num iNCLINATION,
-      num rAOFASCNODE,
-      num aRGOFPERICENTER,
-      num mEANANOMALY,
-      num ePHEMERISTYPE,
-      String cLASSIFICATIONTYPE,
-      num nORADCATID,
-      num eLEMENTSETNO,
-      num rEVATEPOCH,
-      num bSTAR,
-      num mEANMOTIONDOT,
-      num mEANMOTIONDDOT,
-      num sEMIMAJORAXIS,
-      num pERIOD,
-      num aPOAPSIS,
-      num pERIAPSIS,
-      String oBJECTTYPE,
-      String rCSSIZE,
-      String cOUNTRYCODE,
-      String lAUNCHDATE,
-      String sITE,
-      String dECAYDATE,
-      num dECAYED,
-      num fILE,
-      num gPID,
-      String tLELINE0,
-      String tLELINE1,
-      String tLELINE2}) {
-    this._cCSDSOMMVERS = cCSDSOMMVERS;
-    this._cOMMENT = cOMMENT;
-    this._cREATIONDATE = cREATIONDATE;
-    this._oRIGINATOR = oRIGINATOR;
-    this._oBJECTNAME = oBJECTNAME;
-    this._oBJECTID = oBJECTID;
-    this._cENTERNAME = cENTERNAME;
-    this._rEFFRAME = rEFFRAME;
-    this._tIMESYSTEM = tIMESYSTEM;
-    this._mEANELEMENTTHEORY = mEANELEMENTTHEORY;
-    this._ePOCH = ePOCH;
-    this._mEANMOTION = mEANMOTION;
-    this._eCCENTRICITY = eCCENTRICITY;
-    this._iNCLINATION = iNCLINATION;
-    this._rAOFASCNODE = rAOFASCNODE;
-    this._aRGOFPERICENTER = aRGOFPERICENTER;
-    this._mEANANOMALY = mEANANOMALY;
-    this._ePHEMERISTYPE = ePHEMERISTYPE;
-    this._cLASSIFICATIONTYPE = cLASSIFICATIONTYPE;
-    this._nORADCATID = nORADCATID;
-    this._eLEMENTSETNO = eLEMENTSETNO;
-    this._rEVATEPOCH = rEVATEPOCH;
-    this._bSTAR = bSTAR;
-    this._mEANMOTIONDOT = mEANMOTIONDOT;
-    this._mEANMOTIONDDOT = mEANMOTIONDDOT;
-    this._sEMIMAJORAXIS = sEMIMAJORAXIS;
-    this._pERIOD = pERIOD;
-    this._aPOAPSIS = aPOAPSIS;
-    this._pERIAPSIS = pERIAPSIS;
-    this._oBJECTTYPE = oBJECTTYPE;
-    this._rCSSIZE = rCSSIZE;
-    this._cOUNTRYCODE = cOUNTRYCODE;
-    this._lAUNCHDATE = lAUNCHDATE;
-    this._sITE = sITE;
-    this._dECAYDATE = dECAYDATE;
-    this._dECAYED = dECAYED;
-    this._fILE = fILE;
-    this._gPID = gPID;
-    this._tLELINE0 = tLELINE0;
-    this._tLELINE1 = tLELINE1;
-    this._tLELINE2 = tLELINE2;
-  }
+  SpaceTrack();
 
-  String get cCSDSOMMVERS => _cCSDSOMMVERS;
-  set cCSDSOMMVERS(String cCSDSOMMVERS) => _cCSDSOMMVERS = cCSDSOMMVERS;
-  String get cOMMENT => _cOMMENT;
-  set cOMMENT(String cOMMENT) => _cOMMENT = cOMMENT;
-  String get cREATIONDATE => _cREATIONDATE;
-  set cREATIONDATE(String cREATIONDATE) => _cREATIONDATE = cREATIONDATE;
-  String get oRIGINATOR => _oRIGINATOR;
-  set oRIGINATOR(String oRIGINATOR) => _oRIGINATOR = oRIGINATOR;
-  String get oBJECTNAME => _oBJECTNAME;
-  set oBJECTNAME(String oBJECTNAME) => _oBJECTNAME = oBJECTNAME;
-  String get oBJECTID => _oBJECTID;
-  set oBJECTID(String oBJECTID) => _oBJECTID = oBJECTID;
-  String get cENTERNAME => _cENTERNAME;
-  set cENTERNAME(String cENTERNAME) => _cENTERNAME = cENTERNAME;
-  String get rEFFRAME => _rEFFRAME;
-  set rEFFRAME(String rEFFRAME) => _rEFFRAME = rEFFRAME;
-  String get tIMESYSTEM => _tIMESYSTEM;
-  set tIMESYSTEM(String tIMESYSTEM) => _tIMESYSTEM = tIMESYSTEM;
-  String get mEANELEMENTTHEORY => _mEANELEMENTTHEORY;
-  set mEANELEMENTTHEORY(String mEANELEMENTTHEORY) =>
-      _mEANELEMENTTHEORY = mEANELEMENTTHEORY;
-  String get ePOCH => _ePOCH;
-  set ePOCH(String ePOCH) => _ePOCH = ePOCH;
-  num get mEANMOTION => _mEANMOTION;
-  set mEANMOTION(num mEANMOTION) => _mEANMOTION = mEANMOTION;
-  num get eCCENTRICITY => _eCCENTRICITY;
-  set eCCENTRICITY(num eCCENTRICITY) => _eCCENTRICITY = eCCENTRICITY;
-  num get iNCLINATION => _iNCLINATION;
-  set iNCLINATION(num iNCLINATION) => _iNCLINATION = iNCLINATION;
-  num get rAOFASCNODE => _rAOFASCNODE;
-  set rAOFASCNODE(num rAOFASCNODE) => _rAOFASCNODE = rAOFASCNODE;
-  num get aRGOFPERICENTER => _aRGOFPERICENTER;
-  set aRGOFPERICENTER(num aRGOFPERICENTER) =>
-      _aRGOFPERICENTER = aRGOFPERICENTER;
-  num get mEANANOMALY => _mEANANOMALY;
-  set mEANANOMALY(num mEANANOMALY) => _mEANANOMALY = mEANANOMALY;
-  num get ePHEMERISTYPE => _ePHEMERISTYPE;
-  set ePHEMERISTYPE(num ePHEMERISTYPE) => _ePHEMERISTYPE = ePHEMERISTYPE;
-  String get cLASSIFICATIONTYPE => _cLASSIFICATIONTYPE;
-  set cLASSIFICATIONTYPE(String cLASSIFICATIONTYPE) =>
-      _cLASSIFICATIONTYPE = cLASSIFICATIONTYPE;
-  num get nORADCATID => _nORADCATID;
-  set nORADCATID(num nORADCATID) => _nORADCATID = nORADCATID;
-  num get eLEMENTSETNO => _eLEMENTSETNO;
-  set eLEMENTSETNO(num eLEMENTSETNO) => _eLEMENTSETNO = eLEMENTSETNO;
-  num get rEVATEPOCH => _rEVATEPOCH;
-  set rEVATEPOCH(num rEVATEPOCH) => _rEVATEPOCH = rEVATEPOCH;
-  num get bSTAR => _bSTAR;
-  set bSTAR(num bSTAR) => _bSTAR = bSTAR;
-  num get mEANMOTIONDOT => _mEANMOTIONDOT;
-  set mEANMOTIONDOT(num mEANMOTIONDOT) => _mEANMOTIONDOT = mEANMOTIONDOT;
-  num get mEANMOTIONDDOT => _mEANMOTIONDDOT;
-  set mEANMOTIONDDOT(num mEANMOTIONDDOT) => _mEANMOTIONDDOT = mEANMOTIONDDOT;
-  num get sEMIMAJORAXIS => _sEMIMAJORAXIS;
-  set sEMIMAJORAXIS(num sEMIMAJORAXIS) => _sEMIMAJORAXIS = sEMIMAJORAXIS;
-  num get pERIOD => _pERIOD;
-  set pERIOD(num pERIOD) => _pERIOD = pERIOD;
-  num get aPOAPSIS => _aPOAPSIS;
-  set aPOAPSIS(num aPOAPSIS) => _aPOAPSIS = aPOAPSIS;
-  num get pERIAPSIS => _pERIAPSIS;
-  set pERIAPSIS(num pERIAPSIS) => _pERIAPSIS = pERIAPSIS;
-  String get oBJECTTYPE => _oBJECTTYPE;
-  set oBJECTTYPE(String oBJECTTYPE) => _oBJECTTYPE = oBJECTTYPE;
-  String get rCSSIZE => _rCSSIZE;
-  set rCSSIZE(String rCSSIZE) => _rCSSIZE = rCSSIZE;
-  String get cOUNTRYCODE => _cOUNTRYCODE;
-  set cOUNTRYCODE(String cOUNTRYCODE) => _cOUNTRYCODE = cOUNTRYCODE;
-  String get lAUNCHDATE => _lAUNCHDATE;
-  set lAUNCHDATE(String lAUNCHDATE) => _lAUNCHDATE = lAUNCHDATE;
-  String get sITE => _sITE;
-  set sITE(String sITE) => _sITE = sITE;
-  String get dECAYDATE => _dECAYDATE;
-  set dECAYDATE(String dECAYDATE) => _dECAYDATE = dECAYDATE;
-  num get dECAYED => _dECAYED;
-  set dECAYED(num dECAYED) => _dECAYED = dECAYED;
-  num get fILE => _fILE;
-  set fILE(num fILE) => _fILE = fILE;
-  num get gPID => _gPID;
-  set gPID(num gPID) => _gPID = gPID;
-  String get tLELINE0 => _tLELINE0;
-  set tLELINE0(String tLELINE0) => _tLELINE0 = tLELINE0;
-  String get tLELINE1 => _tLELINE1;
-  set tLELINE1(String tLELINE1) => _tLELINE1 = tLELINE1;
-  String get tLELINE2 => _tLELINE2;
-  set tLELINE2(String tLELINE2) => _tLELINE2 = tLELINE2;
+  // ...
 
   SpaceTrack.fromJson(Map<String, dynamic> json) {
     _cCSDSOMMVERS = json['CCSDS_OMM_VERS'];
