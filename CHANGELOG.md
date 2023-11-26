@@ -1,3 +1,7 @@
+## [0.0.6] - Added NullSafety & bumped sdk to > v3.0.0
+- Bumped sdk versiont to sdk: '>=3.0.0 <4.0.0'
+- Added Null Safety
+
 ## [0.0.5] - Added Dartdoc support
 
 - Updated documentation
